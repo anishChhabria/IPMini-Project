@@ -3,7 +3,7 @@
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
 
-<div class = "navbar">
+<div class = "navbar" style="postion:fixed;">
     <div class = "col-3 logo" >
         <!--<img src = "./websiteLogo1.png" alter = "Logo" width = 100%>-->
         logo
@@ -84,7 +84,7 @@
         </ul>
     </div>
 </div>  
-<div class="" style="left: 25%; position: relative;height: 100%;width: 75%;">
+<div class="col-9" style="left: 23%; position: relative;height: 100%">
     @yield('contents')
     @include('product.defaultProduct')
 

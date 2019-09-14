@@ -3,6 +3,8 @@
     background-color:powderblue;
     height : 100px;
     width : 100%;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0;
   }
   .logo{
     height : 100%;
@@ -109,7 +111,7 @@
     background-color: powderblue;
     overflow-x: hidden;
     padding-top: 20px;
-    margin-left: 8px;
+    /* margin-left: 8px; */
   }
   
   .category{
