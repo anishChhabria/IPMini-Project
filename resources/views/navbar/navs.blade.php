@@ -6,7 +6,7 @@
 <div class = "navbar" style="postion:fixed;">
     <div class = "col-3 logo" >
         <!--<img src = "./websiteLogo1.png" alter = "Logo" width = 100%>-->
-        logo
+        log
     </div>
     <div class = "col-6 search">
         <form>
