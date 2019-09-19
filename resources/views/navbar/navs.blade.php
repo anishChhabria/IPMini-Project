@@ -84,8 +84,8 @@
         </ul>
     </div>
 </div>  
-<div class="col-9" style="left: 23%; position: relative;height: 100%">
-    @yield('contents')
+<div class="col-9" style="left:23%">
+    {{-- @yield('contents') --}}
     @include('product.defaultProduct')
 
 </div>

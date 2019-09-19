@@ -14,7 +14,6 @@
 </head>
 <body></body>
     @include('navbar.navs')
-
 </body>
 </html> 
 

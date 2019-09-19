@@ -43,7 +43,10 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        {{-- <div class="col-3" style="background-color:powderblue;">
+
+        </div> --}}
     </div>
-    
+
 {{-- </div> --}}
 {{-- @endsection --}}
