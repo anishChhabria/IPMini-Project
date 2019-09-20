@@ -1,0 +1,24 @@
+#topNav{
+    background-color: blueviolet;    
+}
+#logo{
+    background-color: rgb(255, 127, 223);
+    font-size: 3vw;
+}
+#search{
+
+}
+#userProfile{
+    background-color: bisque;
+}
+.searchBar{
+    padding: 0.5vw;
+
+    width : 75%;
+    height : 2vw;
+    border-top-left-radius : 1vw;
+    border-bottom-left-radius: 1vw;
+    border: none;
+    background-color: #3AAFA9;
+    font-size: 1vw;
+}
