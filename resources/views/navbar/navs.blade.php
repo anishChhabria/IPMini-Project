@@ -1,5 +1,9 @@
-<div class="container">
-    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+{{-- <div class="container"> --}}
+@extends('layouts.dashboard')
+
+
+@section('content')
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
         <div id="logo" class="col-4">
             LOGO
         </div>
@@ -18,6 +22,13 @@
             hello
         </div>
     </nav>
-
-
-</div>
+    
+    <nav style="background-color: blue">
+        <div class="container">
+            home
+        </div>
+    </nav>
+    @yield('nav')
+@endsection
+    
+{{-- </div> --}}

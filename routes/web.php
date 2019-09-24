@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', "DashboardController@index" );
+
+Route::get('/profile', "ProfileController@index" );
