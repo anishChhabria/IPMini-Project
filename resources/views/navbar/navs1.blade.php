@@ -1,3 +1,7 @@
+@extends('layouts.dashboard')
+
+@section('nav')
+
 <!-- <script>
     $(document).ready(function(){
             
@@ -98,5 +102,6 @@
 </nav>
 
 <div id='content'>
-
+    @yield('content')
 </div>
+@endsection
