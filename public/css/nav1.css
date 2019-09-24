@@ -1,24 +1,42 @@
+a.plain{
+    text-decoration: none !important;
+}
+
+a.plain:hover{
+    .hello{
+
+    }
+}
+.hello{
+    background-color: red;
+}
+
 #topNav{
-    background-color: blueviolet;    
+    background-color: blueviolet; 
+    padding-bottom: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0 px !important;   
 }
 #logo{
     background-color: rgb(255, 127, 223);
     font-size: 3vw;
 }
-#search{
-
-}
 #userProfile{
     background-color: bisque;
+    /* font-size: 3vw */
 }
-.searchBar{
-    padding: 0.5vw;
-
-    width : 75%;
-    height : 2vw;
-    border-top-left-radius : 1vw;
-    border-bottom-left-radius: 1vw;
+#searchBar{
     border: none;
     background-color: #3AAFA9;
-    font-size: 1vw;
+}
+#searchButton{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.wishlist{
+    font-size:20px;
+}
+.cart{
+    font-size: 20px;
 }
