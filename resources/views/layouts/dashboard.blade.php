@@ -13,6 +13,7 @@
 </head>
 <body>
     @include('navbar.navs1')
+    
 </body>
 </body>
 </html> 

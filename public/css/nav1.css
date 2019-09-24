@@ -2,11 +2,11 @@ a.plain{
     text-decoration: none !important;
 }
 
-a.plain:hover{
+/* a.plain:hover{
     .hello{
 
     }
-}
+} */
 .hello{
     background-color: red;
 }
