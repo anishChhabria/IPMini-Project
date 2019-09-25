@@ -22,9 +22,9 @@
 </script> -->
 
 
-<div>
+{{-- <div>
     for best view try to access the website on laptop/desktop 
-</div>
+</div> --}}
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div id="logo" class="col-4">
@@ -102,6 +102,6 @@
 </nav>
 
 <div id='content'>
-    @yield('content')
+    @yield('contents')
 </div>
 @endsection
