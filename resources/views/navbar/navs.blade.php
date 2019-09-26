@@ -77,7 +77,6 @@
                     Accessories
                 </a>
             </div>
-            <div class="col-1"></div>
             <div class="col-0.5">
                 <a class="plain" href="/compare">
                     Compare
@@ -101,7 +100,7 @@
         </div>
 </nav>
 
-<div id='content'>
+<div id='content' class = "container">
     @yield('contents')
 </div>
 @endsection

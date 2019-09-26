@@ -1,22 +1,17 @@
 @extends('navbar.navs')
 
 @section('contents')
-{{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
-{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> --}}
-{{-- <div class="col-sm-1 col-md-12 col-lg-12"> --}}
-    <div class = "container" id="sidenav">
-        <div class="row">
-            <div class = "sidenav col-4">
-                <div class="col-1 5">
-                    <a href="/content">Contents</a>
-                </div>
-                
+    <div class = row>
+    <div class = "sidenav col-2" style="background-color: red">
+        <div class="aligntext">
+            <a href="/content">content</a>
+        </div>
+        <div class="aligntext">
+            <a href="/content"></a>
         </div>
     </div>
+    <div class ="col-10">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia repellendus ratione delectus facere! In, quam incidunt ab id deserunt laboriosam consectetur adipisci est voluptates, ex assumenda cupiditate dolorum. Vero, hic.
     </div>
-    
-
-{{-- </div> --}}
+</div>
 @endsection
