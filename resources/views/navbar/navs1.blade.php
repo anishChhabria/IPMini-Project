@@ -27,81 +27,77 @@
 </div>
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <div id="logo" class="col-4">
+        <div id="logo" class="col-3">
             LOGO
         </div>
-        <div id="search" class="col-6 input-group md-form form-sm form-2 pl-0 ">
+        <div id="search" class="col-5 input-group md-form form-sm form-2 pl-0 ">
             <input id = "searchBar" class="form-control my-0 py-1 red-border" type="text" placeholder="Search..." aria-label="Search">
             <button id="searchButton"><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
         </div>
+        <div class="col-1">
+            <a id="wishlist" class="plain" href="/wishlist">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="col-1">
+            <a id="cart" class="plain" href="/cart">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+        </div>
         <div id="userProfile" class="col-2">
-        <p class="navbar-text navbar-right actions">
-            <a class="plain" href="#">Log In</a>
-            
-        </p>
+            <button id="login">Login</button>
         </div>
     </div>
 
-        <div id='hello' class="container">
-            <div class="col-1.5">
-                <a class="plain" href="" data-target="/category"> 
-                    Shop by <br> 
-                    Category
-                </a>
-            </div>
-            <div class="col-1.5">
-                <a class="plain" href="/brand">
-                    Shop by <br>
-                    Brand
-                </a>
-            </div>
-            <div class="col-1.5">
-                <a class="plain" href="/preBulit">
-                    Pre-built <br>
-                    Computer
-                </a>
-            </div>
-            <div class="col-1.5">
-                <a class="plain" href="/custom">
-                    Built your <br>
-                    Computer
-                </a>
-            </div>
-            <div class="col-1.5">
-                <a class="plain" href="/monitor">
-                    Monitor
-                </a>
-            </div>
-            <div class="col-1.5">
-                <a class="plain" href="/accessories">
-                    Accessories
-                </a>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-0.5">
-                <a class="plain" href="/compare">
-                    Compare
-                </a>
-            </div>
-            <div class="col-0.5">
-                <a class="plain" href="/offers">
-                    Offer
-                </a>
-            </div>
-            <div class="col-0.5">
-                <a class="plain wishlist" href="/wishlist">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                </a>
-            </div>
-            <div class="col-0.5">
-                <a class="plain cart" href="/cart">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </a>
-            </div>
+    <div class="container">
+        <div id="category" class="col-2 time">
+            <a class="plain" href="" data-target="/category"> 
+                Shop by <br> 
+                Category
+            </a>
         </div>
+        <div class="col-2 time">
+            <a class="plain" href="/brand">
+            Shop by <br>
+            Brand
+            </a>
+        </div>
+        <div class="col-2 time">
+            <a class="plain" href="/preBulit">
+                Pre-built <br>
+                Computer
+            </a>
+        </div>
+        <div class="col-2 time">
+            <a class="plain" href="/custom">
+                Built your <br>
+                Computer
+            </a>
+        </div>
+        <div class="col-1 time">
+            <a class="plain" href="/monitor">
+                Monitor
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="plain" href="/accessories">
+                Accessories
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="plain" href="/compare">
+                Compare
+            </a>
+        </div>
+        <div class="col-1">
+            <a class="plain" href="/offers">
+                Offer
+            </a>
+        </div>
+    </div>
 </nav>
 
-<div id='content'>
-    @yield('content')
+<div id='content' class="container">
+    @yield('demo')
 </div>
 @endsection

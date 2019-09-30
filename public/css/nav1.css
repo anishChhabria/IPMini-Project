@@ -2,13 +2,15 @@ a.plain{
     text-decoration: none !important;
 }
 
-/* a.plain:hover{
-    .hello{
-
-    }
-} */
-.hello{
-    background-color: red;
+a.plain:hover{
+    color: green !important;
+}
+nav div div a:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+nav div div {
+    text-align: center;
 }
 
 #topNav{
@@ -22,8 +24,12 @@ a.plain{
     font-size: 3vw;
 }
 #userProfile{
-    background-color: bisque;
-    /* font-size: 3vw */
+    position: relative;
+    font-size: 1.3vw;
+    text-align: center;
+}
+#login{
+    background-color: aqua;
 }
 #searchBar{
     border: none;
@@ -34,9 +40,9 @@ a.plain{
     border-top-right-radius: 10px;
 }
 
-.wishlist{
+#wishlist{
     font-size:20px;
 }
-.cart{
+#cart{
     font-size: 20px;
 }
