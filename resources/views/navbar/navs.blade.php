@@ -22,9 +22,9 @@
 </script> -->
 
 
-<div>
+{{-- <div>
     for best view try to access the website on laptop/desktop 
-</div>
+</div> --}}
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div id="logo" class="col-4">
@@ -77,7 +77,6 @@
                     Accessories
                 </a>
             </div>
-            <div class="col-1"></div>
             <div class="col-0.5">
                 <a class="plain" href="/compare">
                     Compare
@@ -101,7 +100,7 @@
         </div>
 </nav>
 
-<div id='content'>
-    @yield('content')
+<div id='content' class = "container">
+    @yield('contents')
 </div>
 @endsection
