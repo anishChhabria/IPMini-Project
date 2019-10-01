@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 
 class ProfileController extends Controller
 {
@@ -11,9 +12,9 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $profile['fname'] = "Anish";
+        $profile['fname'] = "Anshul";
         $profile['lname' ] = "Chhabria";
         // $profile['mobile number' ] = "Chhabria";
         $profile['email' ] = "Chhabria";
@@ -22,8 +23,15 @@ class ProfileController extends Controller
         // $profile['password' ] = "Chhabria";
         // $profile['confirm password' ] = "Chhabria";
         // return $profile['name'];
+        Session::put('user', $profile);
+        if($request->session()->has('user'))
+    {
+        return(Session::get('user'));
         return view('profile.profile')->with('profile',$profile);
+    }else{
+        redirect('/');
     }
+}
 
     /**
      * Show the form for creating a new resource.
