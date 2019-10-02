@@ -1,6 +1,6 @@
 @extends('navbar.navbar')
 
-@section('monitor')
+@section('content')
     <div>
         monitor
     </div>  

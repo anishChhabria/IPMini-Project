@@ -1,6 +1,6 @@
 @extends('navbar.navbar')
 
-@section('offers')
+@section('content')
     <div>
         offers
     </div>  

@@ -1,6 +1,6 @@
-@extends('navbar.navs')
+@extends('navbar.navbar')
 
-@section('nav')
+@section('content')
 
 <div class ="container">
         <form action = "/profile/store" method ="POST" >

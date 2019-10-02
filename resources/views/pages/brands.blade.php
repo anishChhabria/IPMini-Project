@@ -1,6 +1,6 @@
 @extends('navbar.navbar')
 
-@section('brands')
+@section('content')
     <div>
         brands
     </div>  

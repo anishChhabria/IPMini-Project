@@ -1,6 +1,6 @@
 @extends('navbar.navbar')
 
-@section('prebuilt')
+@section('content')
     <div>
         prebuilt
     </div>  

@@ -86,14 +86,7 @@
 </div>
 
 <div id="content" class="container">
-    @yield('category')
-    @yield('brands')
-    @yield('prebuilt')
-    @yield('custombuilt')
-    @yield('monitor')
-    @yield('accessories')
-    @yield('compare')
-    @yield('offers')
+    @yield('content')
 </div>
 
 @endsection

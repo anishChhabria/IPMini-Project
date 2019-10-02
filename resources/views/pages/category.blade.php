@@ -1,6 +1,6 @@
 @extends('navbar.navbar')
 
-@section('category')
+@section('content')
     <div>
         <nav class="sidenavbar">
             <div>

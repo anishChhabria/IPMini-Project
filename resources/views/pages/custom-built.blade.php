@@ -1,6 +1,6 @@
 @extends('navbar.navbar')
 
-@section('custombuilt')
+@section('content')
     <div>
         custom
     </div>  

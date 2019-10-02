@@ -1,6 +1,6 @@
 @extends('navbar.navbar')
 
-@section('compare')
+@section('content')
     <div>
         compare
     </div>  
