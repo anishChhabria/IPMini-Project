@@ -31,3 +31,6 @@ route::get('/Offers','NavigationController@offers');
 
 
 // route::get('','');
+
+Route::get('/profile', "ProfileController@index" );
+Route::post('/profile/store', "ProfileController@store" );
