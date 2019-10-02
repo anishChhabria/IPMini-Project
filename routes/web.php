@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/dashboard', "DashboardController@index" );
 
 Route::get('/profile', "ProfileController@index" );
+Route::post('/profile/store', "ProfileController@store" );

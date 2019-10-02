@@ -26,7 +26,7 @@ class ProfileController extends Controller
         Session::put('user', $profile);
         if($request->session()->has('user'))
     {
-        return(Session::get('user'));
+        // return(Session::get('user'));
         return view('profile.profile')->with('profile',$profile);
     }else{
         redirect('/');
@@ -51,7 +51,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return("GG");
     }
 
     /**
