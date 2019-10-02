@@ -11,24 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/dashboard', "DashboardController@index" );
+// Route::get('/dashboard', "DashboardController@index" );
 
-
+route::get('/','NavigationController@index');
 //navbar routes
-route::get('/category','ProductController@category');
-route::get('/brand','ProductController@brand');
-route::get('/preBuilt','ProductController@preBuilt');
-route::get('/custom','ProductController@custom');
-route::get('/monitor','ProductController@monitor');
-route::get('/accessories','ProductController@accessories');
-route::get('/compare','ProductController@compare');
-route::get('/offers','ProductController@offers');
-route::get('/wishlist','ProductController@wishlist');
-route::get('/cart','ProductController@cart');
+
+route::get('/Category','NavigationController@category');
+route::get('/Brands','NavigationController@brand');
+route::get('/Prebuilt','NavigationController@preBuilt');
+route::get('/Custombuilt','NavigationController@customBuilt');
+route::get('/Monitor','NavigationController@monitor');
+route::get('/Accessories','NavigationController@accessories');
+route::get('/Compare','NavigationController@compare');
+route::get('/Offers','NavigationController@offers');
 
 
 // route::get('','');

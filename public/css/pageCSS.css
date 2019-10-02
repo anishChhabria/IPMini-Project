@@ -1,0 +1,21 @@
+/* Category page css */
+.sidenavbar{
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    /* top: 108px;
+    left: 0; */
+    background-color:white;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-left: 8px;
+    border: none;
+    /* border-top: none; */
+  }
+  
+.data{
+  width: 70%!important;
+  background-color: green;
+  margin-left: 30%;
+}

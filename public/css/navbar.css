@@ -1,0 +1,53 @@
+a.plain{
+    text-decoration: none !important;
+    color: black !important;
+}
+
+a.plain:hover{
+    color: red !important;
+}
+nav div div {
+    text-align: center;
+}
+#topNav1{
+    /* height: 90px; */
+}
+#topNav2{
+    font-size: 20px;
+    background-color:red !important;
+}
+#searchBar{
+    /* border: none;  */
+    outline: none !important;  
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+/* #searchBar:onc */
+#searchButton{
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.wishlist{
+    padding: 0px !important;
+}
+#wishlist i{
+    font-size:25px;
+}
+.cart{
+    padding: 0px !important;
+}
+#cart i{
+    font-size: 25px;
+}
+.userprofile{
+    padding: 0px !important;
+}
+
+
+nav div div ul li{
+    text-align: center;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
