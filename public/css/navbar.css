@@ -10,11 +10,22 @@ nav div div {
     text-align: center;
 }
 #topNav1{
-    /* height: 90px; */
+    overflow: hidden !important;
+    position: fixed !important;
+    z-index: 1;
+    top: 0;
+    width: 100% !important;
+    background-color: #f2f2f2;
 }
 #topNav2{
     font-size: 20px;
     background-color:red !important;
+    position: fixed !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    top: 65px;
+    width: 100%;
+
 }
 #searchBar{
     /* border: none;  */
@@ -42,12 +53,14 @@ nav div div {
 .userprofile{
     padding: 0px !important;
 }
-
-
 nav div div ul li{
     text-align: center;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
+}
+
+.content{
+    margin-top: 127px !important;  
 }

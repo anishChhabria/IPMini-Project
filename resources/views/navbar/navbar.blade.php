@@ -3,9 +3,6 @@
 @section('navbar')
 
 <div>
-    for best experience try to access the website on laptop/desktop 
-</div>
-<div>
     <nav id="topNav1" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div id="logo" class="col-3">
@@ -85,7 +82,7 @@
     </nav>
 </div>
 
-<div id="content" class="container">
+<div class="container content">
     @yield('content')
 </div>
 
