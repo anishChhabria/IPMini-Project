@@ -28,7 +28,7 @@
                 <a class="plain" href="#">LogIn/Register</a>
             </div>
         </div>
-    </nav>
+    </nav> 
     <nav id="topNav2" class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,42 +36,42 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Category" data-target="category">
                             Category
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Brands" data-target="brands">
                             Brands
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Prebuilt" data-target="pre-built">
                             Pre-built
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Custombuilt" data-target="custom-built">
                             Custom-built 
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Monitor" data-target="monitor">
                             Monitor
                         </a>
                     </li>  
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Accessories">
                             Accessories
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Compare">
                             Compare
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Offers">
                             Offers
                         </a>

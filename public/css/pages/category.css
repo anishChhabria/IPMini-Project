@@ -1,16 +1,9 @@
-/* Category page css */
-.sidenavbar{
-    height: 100% !important;
-    width: 17.2%;
-    position: fixed !important;
-    z-index: 1;
-    background-color:white;
-    overflow-x: hidden;
-    padding-top: 20px;
-    border: none;
+.categoryData{
+  background-color:white;
+  margin-left: 250px;
+}
+@media only screen and (max-width: 990px){
+  .categoryData{
+      margin-left: 180px;
   }
-  
-.data{
-  background-color: green;
-  margin-left: 23%;
 }
