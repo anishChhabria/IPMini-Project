@@ -23,7 +23,7 @@
             </div>          
         </nav>
         <div class="data">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae natus quas quibusdam corrupti repudiandae eum adipisci tempora ut eveniet similique rerum consectetur aspernatur, soluta aut asperiores aperiam, temporibus perspiciatis!
+            {{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque molestiae natus quas quibusdam corrupti repudiandae eum adipisci tempora ut eveniet similique rerum consectetur aspernatur, soluta aut asperiores aperiam, temporibus perspiciatis! --}}
         </div>
     </div> 
 @endsection

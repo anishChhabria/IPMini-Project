@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Storage;
 class NavigationController extends Controller
 {
     public function index()
@@ -12,6 +12,10 @@ class NavigationController extends Controller
     }
     public function category()
     {
+        $category_json = Storage::disk('local')->get('json/parts.json');
+        $category_json = json_decode($category_json,true);
+        // return($category_json);
+        return($category_json['processors'][0]['amd'][0]['ryzen 5']);
         return view('pages.category');
     }
     public function brand()

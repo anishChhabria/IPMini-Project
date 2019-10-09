@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class ="col-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia repellendus ratione delectus facere! In, quam incidunt ab id deserunt laboriosam consectetur adipisci est voluptates, ex assumenda cupiditate dolorum. Vero, hic.
+        {{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia repellendus ratione delectus facere! In, quam incidunt ab id deserunt laboriosam consectetur adipisci est voluptates, ex assumenda cupiditate dolorum. Vero, hic. --}}
     </div>
 </div>
 @endsection
