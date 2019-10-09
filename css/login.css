@@ -1,0 +1,74 @@
+.wrapper{
+    margin: auto;
+    width: 500px;
+    height: 650px;
+    padding: 50px;
+    border: solid 2px #112d32;
+    margin-top: 3%;
+    border-radius: 10px;
+}
+
+.wrapper .text-center{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.wrapper .form-group label{
+    margin-bottom: 15px;
+}
+
+.wrapper .form-group i{
+    font-size: 2em;
+    margin-top: 2px;
+    padding-right: 10px;
+}
+
+#form1{
+    padding-bottom: 20px;
+}
+
+#form2{
+    margin-bottom: 5px;
+} 
+
+.wrapper .form-group input{
+    /* padding: 0px 50px; */
+    width: 100%;
+    border:none;
+    border-radius: 20px;
+    border: 1px solid black;
+    size: auto; 
+}
+.wrapper .text-right{
+    padding-bottom: 20px;
+}
+
+.wrapper .btn-default{
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px black solid;
+}
+
+.wrapper .extra{
+    margin-top: 50px; 
+}
+
+.wrapper .extra .social{
+    font-size: 2em;
+}
+
+.wrapper .extra .social .fa{
+    padding: 0px 5px;   
+    color: #112d32;
+}
+
+.wrapper .extra .social a{
+    border: none;
+    color: white;
+}
+
+.wrapper .register{
+    margin-top: 50px;
+    margin-bottom: 50px; 
+}

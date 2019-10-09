@@ -1,0 +1,53 @@
+.wrapper{
+    margin: auto;
+    width: 600px;
+    height: 900px;
+    padding: 50px;
+    border: solid 2px #112d32;
+    margin-top: 3%;
+    border-radius: 10px;
+}
+
+.wrapper .form-group input{
+    /* padding: 0px 50px; */
+    width: 100%;
+    border:none;
+    border-radius: 20px;
+    border: 1px solid black;
+    size: auto; 
+    
+}
+
+.wrapper .btn-default{
+    display: inline;
+    width: 49.5%;
+    border-radius: 20px;
+    border: 1px black solid;
+}
+
+.wrapper .last{
+    padding-bottom: 20px;
+}
+
+.wrapper .extra{
+    margin-top: 50px; 
+}
+
+.wrapper .extra .social{
+    font-size: 2em;
+}
+
+.wrapper .extra .social .fa{
+    padding: 0px 5px;   
+    color: #112d32;
+}
+
+.wrapper .extra .social a{
+    border: none;
+    color: white;
+}
+
+.wrapper .register{
+    margin-top: 50px;
+    margin-bottom: 50px; 
+}
