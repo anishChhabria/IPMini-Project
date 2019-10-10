@@ -1,0 +1,97 @@
+/* sidenav css */
+.sidenavbar{
+    height: 80% !important;
+    width: 250px;
+    position: fixed !important;
+    /* z-index: 1; */
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border: none;
+  }
+@media only screen and (max-width: 990px){
+    .sidenavbar{
+        width: 180px;
+    }
+}
+
+/*sidenav element css */
+a {
+    text-decoration: none !important;    
+}
+li{
+    text-decoration: none;
+    list-style-type: none;
+}
+aside nav.left-nav {
+    background-color: white;
+} 
+aside nav.left-nav ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+aside nav.left-nav ul li {
+    font-size: 20px;
+    width: 200px;
+    border-bottom: solid;
+    border-color: gray;
+} 
+aside nav.left-nav ul li a {
+    color: #010100;
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+}
+aside nav.left-nav ul li a:hover {
+    color: #88BCBD;
+    text-decoration: none;
+}
+
+aside nav.left-nav ul li ul {
+    display: none;
+}
+
+aside nav.left-nav ul li ul li a {
+    font-size: 17px;
+    padding-left: 40px;
+}
+
+aside nav.left-nav ul li ul li a.active {
+    background-color: initial;
+    padding-bottom: initial;
+}
+
+aside nav.left-nav ul li ul li a:hover {
+    color: #88BCBD;
+}
+
+.down-icon{
+    float: right;
+    font-size: 10px;
+}
+.up-icon{
+    float: right;
+    font-size: 10px;
+}
+
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+    
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
