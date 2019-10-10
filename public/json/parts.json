@@ -1,6 +1,132 @@
 {
+    "motherboards":[{
+        "asus":[{
+
+        }],
+        "gigabyte":[{
+
+        }],
+        "msi":[{
+
+        }]
+    }],
+    "ram":[{
+        "DDR4":[{
+            "GSKILL":[{
+                "4133MHz":[{
+                    "model":"F4-4133C19D-16GTZR",
+                    "series":"TRIDENT Z RGB",
+                    "led":"RGB",
+                    "memorysize":"16GB",
+                    "price":"24,500"
+                }],
+                "4266MHz":[{
+                    "model":"F4-4266C19D-16GTZR",
+                    "series":"TRIDENT Z RGB",
+                    "led":"RGB",
+                    "memorysize":"16GB",
+                    "price":"26,000"
+                }],
+                "3600MHz":[{
+                    "model":"F4-3600C18D-32GTZN",
+                    "series":"TRIDENT Z NEO",
+                    "led":"RGB",
+                    "memorysize":"32GB",
+                    "price":"23,499"
+                }]
+            }],
+            "THERMALTAKE":[{
+                "3200Mhz":[{
+                    "model":"CL-W251-CA00SW-A",
+                    "series":"WaterRam RGB",
+                    "led":"RGB",
+                    "memorysize":"16GB",
+                    "price":"25,955",
+                    "speciality":"Liquid Cooling"
+                }]
+            }]
+        }],
+        "DDR3":[{
+            "hyperx":[{
+                "1333Mhz":[{
+                    "model":"HX313C9FK2/16",
+                    "series":"DDR3",
+                    "led":"NONE",
+                    "memorysize":"16GB",
+                    "price":"5,800" 
+                }]
+                
+            }],
+            "g.skill":[{
+                "1600Mhz":[{
+                    "model":"F3-1600C9S-8GRSL",
+                    "series":"RIPJAWS",
+                    "led":"NONE",
+                    "memorysize":"8GB",
+                    "price":"4,800" 
+                }]
+            }],
+            "corsair":[{
+                "1600Mhz":[{
+                    "model":"F3-1600C9S-8GRSL",
+                    "series":"VENGEANCE",
+                    "led":"NONE",
+                    "memorysize":"8GB",
+                    "price":"2,900" 
+                }]
+            }]
+
+
+        }]
+    }],
+    "storage":[{
+        "harddrive":[{
+            "2TB":[{
+                "Seagate":[{
+                    "7200Mhz":[{
+                        "model":"ST2000DX002",
+                        "interface":"SATA 6Gb/s",
+                        "transferrate":"6.0/3.0/1.5"
+                    }]
+                }]
+
+            }],
+            "1TB":[{
+                "Seagate":[{
+                    "7200Mhz":[{
+                        "model":"ST1000DM010",
+                        "interface":"SATA 6Gb/s",
+                        "transferrate":"6.0/3.0/1.5"
+                    }]
+                }]
+            }]
+        }],
+        "ssd":[{
+            
+        }],
+        "optane":[{
+
+        }]
+    }],
+    "graphic card":[{
+
+    }],
+    "powersupply":[{
+
+    }],
     "processors":[{
         "amd":[{
+            "ryzen 3":[{
+                "2200G APU":[{
+                    "gen":"1st",
+                    "cores":"4",
+                    "basespeed":"3.5GHz",
+                    "turbospeed":"3.7GHz",
+                    "cache":"6MB",
+                    "price":"7,045"                    
+                }]
+
+            }],
             "ryzen 5":[{
                 "3500":[{
                     "gen":"3rd",
@@ -25,6 +151,30 @@
                     "turbospeed":"4.4GHz",
                     "cache":"35MB",
                     "price":"20,499"
+                }],
+                "2400G":[{
+                    "gen":"1st",
+                    "cores":"4",
+                    "basespeed":"3.6GHz",
+                    "turbospeed":"3.9GHz",
+                    "cache":"6MB",
+                    "price":"11,280"
+                    }],
+                "2600":[{
+                    "gen":"2nd",
+                    "cores":"6",
+                    "basespeed":"3.4GHz",
+                    "turbospeed":"3.9GHz",
+                    "cache":"19MB",
+                    "price":"12,999"
+                }],
+                "2600X":[{
+                    "gen":"2nd",
+                    "cores":"6",
+                    "basespeed":"3.6GHz",
+                    "turbospeed":"4.2GHz",
+                    "cache":"19MB",
+                    "price":"15,999"
                 }]
 
             }],
@@ -44,6 +194,14 @@
                     "turbospeed":"4.5GHz",
                     "cache":"36MB",
                     "price":"33,449"
+                }],
+                "2700X":[{
+                    "gen":"3rd ",
+                    "cores":"8",
+                    "basespeed":"3.7GHz",
+                    "turbospeed":"4.3GHz",
+                    "cache":"20MB",
+                    "price":"20,999"    
                 }]
             }],
             "ryzen 9":[{
@@ -56,7 +214,16 @@
                     "price":"48,499"
                 }]
             }],
-            "threadripper":[]
+            "threadripper":[{
+                "2970WX":[{
+                    "gen":"2nd",
+                    "cores":"24",
+                    "basespeed":"3.0GHz",
+                    "turbospeed":"4.2GHz",
+                    "cache":"76MB",
+                    "price":"105,999"
+                }]
+            }]
 
             }],
             "intel":[{
