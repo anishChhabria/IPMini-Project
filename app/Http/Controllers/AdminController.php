@@ -140,7 +140,6 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -186,7 +185,7 @@ class AdminController extends Controller
      */
     public function deleteproduct()
     {
-        return view("admin.addOffers");
+        return view("admin.deleteProducts");
     }
 
 
@@ -208,6 +207,35 @@ class AdminController extends Controller
      */
     public function addoffers()
     {
-        return view("admin.deleteProducts");
+        return view("admin.addOffers");
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showProducts(Request $request){
+        
+        $this->validate($request,[
+            'component'=>'required',
+            'serialNo' => 'required'
+        ]);
+        if($request->input('component') == 'processors'){
+            $result = processors::where('serialno', '=', $request->input('serialNo') )->delete();
+            if($result){
+                return redirect('/admin/home')->with('success','Record has been deleted');
+            }
+            // return($request->input('component'));
+        }elseif($request->input('component') == 'gpu'){
+            
+            return($request->input('component'));
+        }else{
+            
+            return($request->input('component'));
+        }
     }
 }
