@@ -89,7 +89,7 @@ class ProfileController extends Controller
         $user->state = $request->input('state');
         $user->save();
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Profile has been updated');
         
 
     }
