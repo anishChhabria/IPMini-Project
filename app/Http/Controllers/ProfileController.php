@@ -54,12 +54,13 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        // return('gg');
         $this->validate($request,[
             'first_name' => 'required|String',
             'mid_name' => 'required|String',
             'last_name' => 'required|String',
             'phone_no' => 'required|min:9000000000|max:9999999999|Numeric',
-            // 'date_of_birht' => 'required|Date Format|Before(1/1/15)',
+            'date_of_birth' => 'required|Date',
             'gender' => 'required|String',
             'address_line_1' => 'required',
             'address_line_2' => 'required',
@@ -67,7 +68,6 @@ class ProfileController extends Controller
             'address_line_4' => 'required',
             'state'=> 'required'
         ]);
-        // return('gg');
         $user = new Users();
         // return($request->input('first_name'));
         $user->email_id = $request->input('email_id');

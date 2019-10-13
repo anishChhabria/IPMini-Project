@@ -34,3 +34,12 @@ route::get('/Offers','NavigationController@offers');
 
 Route::get('/profile', "ProfileController@index" );
 Route::post('/profile/store', "ProfileController@store" );
+
+
+Route::group(['prefix' => 'admin'],function(){
+    route::get('/home', 'AdminController@index');
+    route::get('/deleteProduct', 'AdminController@deleteproduct');
+    route::get('/addProducts', 'AdminController@addproduct');
+    route::post('/store', 'AdminController@store');
+    route::get('/addOffers', 'AdminController@addoffers');
+});

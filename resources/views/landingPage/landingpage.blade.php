@@ -21,6 +21,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color : #f2f2f2;">
+    @include('inc.message')
     @yield('navbar')
 </body>
 </html> 

@@ -20,7 +20,7 @@
 								<label>First Name : </label>
 							<input type="text" class="form-control" name="first_name" id = "first_name" placeholder="Enter First Name " value="{{$profile['fname']}}" onkeyup="generatefullname()">
 
-							@if ($errors->get('first_name'))
+							{{-- @if ($errors->get('first_name'))
 								<div class = "alert alert-danger">
 									<ul>
 										@foreach ($errors->get('first_name') as $error)
@@ -28,7 +28,7 @@
 										@endforeach
 									</ul>
 								</div>
-							@endif
+							@endif --}}
 
 							{{-- </div>	 --}}
 						</div>
@@ -39,7 +39,7 @@
 									<label>Middle Name : </label>
 									<input type="text" class="form-control" name="mid_name" id = "mid_name" placeholder="Enter Mid Name" onkeyup="generatefullname()">
 							{{-- </div> --}}
-							@if ($errors->get('mid_name'))
+							{{-- @if ($errors->get('mid_name'))
 								<div class = "alert alert-danger">
 									<ul>
 										@foreach ($errors->get('mid_name') as $error)
@@ -47,7 +47,7 @@
 										@endforeach
 									</ul>
 								</div>
-							@endif
+							@endif --}}
 						</div>
 					</div>
 					<div class ="col-4">
@@ -55,7 +55,7 @@
 							{{-- <div class="col-lg-4"> --}}
 									<label>Last Name : </label>
 									<input type="text" class="form-control" name="last_name" id = "last_name" placeholder="Enter Last Name" value="{{$profile['lname']}}"  onkeyup="generatefullname()">
-									@if ($errors->get('last_name'))
+									{{-- @if ($errors->get('last_name'))
 								<div class = "alert alert-danger">
 									<ul>
 										@foreach ($errors->get('last_name') as $error)
@@ -63,7 +63,7 @@
 										@endforeach
 									</ul>
 								</div>
-							@endif
+							@endif --}}
 							{{-- </div> --}}
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 								<label>Date of Birth</label>
 								<input type="date" class="form-control" id="date_of_birth" name = "date_of_birth" placeholder="Date of Birth">
 
-								@if ($errors->get('date_of_birth'))
+								{{-- @if ($errors->get('date_of_birth'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('date_of_birth') as $error)
@@ -98,7 +98,7 @@
 											@endforeach
 										</ul>
 									</div>
-								@endif
+								@endif --}}
 
 								
 							</div>
@@ -107,8 +107,8 @@
 					<div class = "col-4">
 							<div class = "form-group">
 									<label>Phone No :</label>
-									<input type="tel" class="form-control" name="phone_no" id = "phone_no" placeholder="9000000000">
-									@if ($errors->get('phone_no'))
+									<input type="tel" class="form-control" name="phone_no" id = "phone_no">
+									{{-- @if ($errors->get('phone_no'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('phone_no') as $error)
@@ -116,7 +116,7 @@
 											@endforeach
 										</ul>
 									</div>
-								@endif
+								@endif --}}
 							</div>
 						</div>
 					<div class = "col-4">
@@ -125,7 +125,7 @@
 							<input type="radio" name="gender" value="male"> Male &nbsp;
 							<input type="radio" name="gender" value="female"> Female &nbsp;
 							<input type="radio" name="gender" value="other"> Other &nbsp;
-							@if ($errors->get('gender'))
+							{{-- @if ($errors->get('gender'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('gender') as $error)
@@ -133,7 +133,7 @@
 											@endforeach
 										</ul>
 									</div>
-							@endif
+							@endif --}}
 						</div>
 					</div>
 				</div>
@@ -142,7 +142,7 @@
 						<div class = "form-group">
 								<label>Address Line 1</label>
 								<input type = "text" class="form-control" name = "address_line_1" id = "address_line_1" placeholder="Address Line 1">
-								@if ($errors->get('address_line_1'))
+								{{-- @if ($errors->get('address_line_1'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('address_line_1') as $error)
@@ -150,14 +150,14 @@
 											@endforeach
 										</ul>
 									</div>
-							@endif
+							@endif --}}
 						</div>
 						</div>
 						<div class = "col-6">
 							<div class = "form-group">
 									<label>Address Line 2</label>
 									<input type = "text" class="form-control" name = "address_line_2" id = "address_line_2" placeholder="Address Line 1">
-									@if ($errors->get('address_line_2'))
+									{{-- @if ($errors->get('address_line_2'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('address_line_2') as $error)
@@ -165,7 +165,7 @@
 											@endforeach
 										</ul>
 									</div>
-							@endif
+							@endif --}}
 							
 							</div>
 						</div>
@@ -175,7 +175,7 @@
 					<div class = "form-group">
 							<label>Land Mark</label>
 							<input type = "text" class="form-control" name = "address_line_3" id = "address_line_3" placeholder="Land Mark">
-							@if ($errors->get('address_line_3'))
+							{{-- @if ($errors->get('address_line_3'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('address_line_3') as $error)
@@ -183,7 +183,7 @@
 											@endforeach
 										</ul>
 									</div>
-							@endif
+							@endif --}}
 						
 					</div>
 					</div>
@@ -191,7 +191,7 @@
 					<div class = "form-group">
 						<label>Pin Code</label>
 						<input type = "number" class="form-control" name = "address_line_4" id = "address_line_4" placeholder="400074">
-						@if ($errors->get('address_line_4'))
+						{{-- @if ($errors->get('address_line_4'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('address_line_4') as $error)
@@ -199,7 +199,7 @@
 											@endforeach
 										</ul>
 									</div>
-						@endif
+						@endif --}}
 					</div>
 					</div>
 					<div class = "col-4">
@@ -238,7 +238,7 @@
 									<option value="west_bengal">West Bengal</option>
 
 								</select>
-								@if ($errors->get('state'))
+								{{-- @if ($errors->get('state'))
 									<div class = "alert alert-danger">
 										<ul>
 											@foreach ($errors->get('state') as $error)
@@ -246,14 +246,14 @@
 											@endforeach
 										</ul>
 									</div>
-								@endif
+								@endif --}}
 							</div>
 							</div>
 				</div>
 				<div class = "row">
 					<div class = "col-4">
 					<div class = "form-group">
-						<button type="submit" class = "btn btn-success">Submit</button>
+						<button type="submit" class = "btn btn-outline-success">Submit</button>
 					</div>
 					</div>
 				</div>
