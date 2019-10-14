@@ -33,7 +33,7 @@ aside nav.left-nav ul {
 aside nav.left-nav ul li {
     font-size: 20px;
     width: 200px;
-    border-bottom: solid;
+    border-bottom: 1px solid;
     border-color: gray;
 } 
 aside nav.left-nav ul li a {

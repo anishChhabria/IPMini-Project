@@ -138,9 +138,11 @@
             </nav>
         </aside>
     </nav> 
-    <div class="customData">
-        
-    
+    <div class="data">
+        @foreach ($processors as $processor)
+            
+            <img src="/storage/processor_images/{{$processor->p_image1}}" alt="">
+        @endforeach
     
     </div> 
     <script>

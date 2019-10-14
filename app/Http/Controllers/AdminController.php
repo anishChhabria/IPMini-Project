@@ -50,6 +50,7 @@ class AdminController extends Controller
             'turboSpeed' => 'required',
             'cache' => 'required',     
             'compatibility' => 'required',
+            'categoryId' => 'required',
             'p_image1' => 'image|max:1999',
             'p_image2' => 'image|nullable|max:1999',
             'p_image3' => 'image|nullable|max:1999',
@@ -110,7 +111,7 @@ class AdminController extends Controller
         $processor->modelNo = $request->input('modelNo');
         $processor->title = $request->input('title');
         $processor->description = $request->input('description');
-        $processor->category = $request->input('category');
+        $processor->brand = $request->input('category');
         $processor->productName = $request->input('productName');
         $processor->codeName = $request->input('codeName');
         $processor->price = $request->input('price');
@@ -121,6 +122,7 @@ class AdminController extends Controller
         $processor->turboSpeed = $request->input('turboSpeed');
         $processor->cache = $request->input('cache');
         $processor->compatibility = $request->input('compatibility');
+        $processor->categoryId = $request->input('categoryId');
         $processor->p_image1 = $fileNameToStore1;
         $processor->p_image2 = $fileNameToStore2;
         $processor->p_image3 = $fileNameToStore3;

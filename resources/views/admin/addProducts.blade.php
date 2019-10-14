@@ -21,7 +21,7 @@
 
             <div class="col-4">
                 <div class = "form-group">
-                    {{Form::label('text', 'Category')}}
+                    {{Form::label('text', 'Brand')}}
                     {{Form::text('category','',['class'=>'form-control', 'placeholder'=>'Eg. AMD or Intel'])}}
                 </div>
             </div>
@@ -120,10 +120,16 @@
         </div>     --}}
 
         <div class = "row">
-            <div class = "col-12">
+            <div class = "col-8">
                 <div class="form-group">
                     {{Form::label('body','Compatibility')}}
                     {{Form::text('compatibility','',[ 'id'=>'article-ckeditor', 'class'=>'form-control', 'placeholder'=>'Compatibility'])}}
+                </div>    
+            </div>
+            <div class = "col-4">
+                <div class="form-group">
+                    {{Form::label('body','Category Id')}}
+                    {{Form::text('categoryId','',[ 'id'=>'article-ckeditor', 'class'=>'form-control', 'placeholder'=>'101 -> processors, 102 -> motherboards ...'])}}
                 </div>    
             </div>
         </div>

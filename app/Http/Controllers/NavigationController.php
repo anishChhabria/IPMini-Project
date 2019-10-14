@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
+use App\processors;
 class NavigationController extends Controller
 {
     public function index()
@@ -31,7 +32,9 @@ class NavigationController extends Controller
     }
     public function customBuilt()
     {
-        return view('pages.custom-built');
+        $processors = processors::get();
+        // return($processors);
+        return view('pages.custom-built')->with('processors',$processors);
     }
     public function monitor()
     {
