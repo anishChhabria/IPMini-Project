@@ -34,3 +34,7 @@ route::get('/Offers','NavigationController@offers');
 
 Route::get('/profile', "ProfileController@index" );
 Route::post('/profile/store', "ProfileController@store" );
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
