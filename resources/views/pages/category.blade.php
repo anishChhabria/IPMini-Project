@@ -13,15 +13,7 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <div class="dropdown">
-                                    <a href="#">Intel</a>
-                                    <div class="dropdown-content">
-                                        <a href="#">i3</a>
-                                        <a href="#">i5</a>
-                                        <a href="#">i7</a>
-                                        <a href="#">i9</a>
-                                    </div>
-                                </div>
+                                <a href="#">Intel</a>
                             </li>
                             <li>
                                 <a href="#">AMD</a>

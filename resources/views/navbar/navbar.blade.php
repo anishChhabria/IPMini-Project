@@ -18,20 +18,13 @@
                 </a>
             </div>
             <div class="col-1 cart">
-                <div class="dropdown">
-                    <a id="cart" class="plain cart" href="/cart">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="#">i3</a>
-                        <a href="#">i5</a>
-                        <a href="#">i7</a>
-                        <a href="#">i9</a>
-                    </div>
-                </div>
+                <a id="cart" class="plain cart" href="/cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                </a>
             </div>
             <div class="col-1 userprofile">
-                <a class="plain" href="#">LogIn/Register</a>
+                <a class="plain" href="#">Login</a> /
+                <a class="plain" href="#">Register</a>
             </div>
         </div>
     </nav> 
