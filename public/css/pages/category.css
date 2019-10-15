@@ -1,9 +1,0 @@
-.categoryData{
-  background-color:white;
-  margin-left: 250px;
-}
-@media only screen and (max-width: 990px){
-  .categoryData{
-      margin-left: 180px;
-  }
-}

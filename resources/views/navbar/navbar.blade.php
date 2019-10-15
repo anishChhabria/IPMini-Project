@@ -14,15 +14,21 @@
             </div>
             <div class="col-1 wishlist">
                 <a id="wishlist" class="plain wishlist" href="/wishlist">
-                    <i class="fa fa-heart" aria-hidden="true"></i> wishlist
+                    <i class="fa fa-heart" aria-hidden="true"></i> Wishlist
                 </a>
             </div>
-            <div class="col-2 cart">
-                <a id="cart" class="plain cart" href="/cart">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 99-items 
-                    <br>
-                    ₹-100000      
-                </a>
+            <div class="col-1 cart">
+                <div class="dropdown">
+                    <a id="cart" class="plain cart" href="/cart">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#">i3</a>
+                        <a href="#">i5</a>
+                        <a href="#">i7</a>
+                        <a href="#">i9</a>
+                    </div>
+                </div>
             </div>
             <div class="col-1 userprofile">
                 <a class="plain" href="#">LogIn/Register</a>
@@ -56,11 +62,6 @@
                             Custom-built 
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Monitor" data-target="monitor">
-                            Monitor
-                        </a>
-                    </li>  
                     <li class="nav-item">
                         <a class="nav-link" href="/Accessories">
                             Accessories

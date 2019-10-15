@@ -8,7 +8,8 @@
     overflow-x: hidden;
     padding-top: 20px;
     border: none;
-  }
+}
+
 @media only screen and (max-width: 990px){
     .sidenavbar{
         width: 180px;
@@ -19,29 +20,35 @@
 a {
     text-decoration: none !important;    
 }
+
 li{
     text-decoration: none;
     list-style-type: none;
 }
+
 aside nav.left-nav {
     background-color: white;
-} 
+}
+
 aside nav.left-nav ul {
     margin-left: 0;
     padding-left: 0;
 }
+
 aside nav.left-nav ul li {
     font-size: 20px;
     width: 200px;
-    border-bottom: solid;
+    border-bottom:  1px solid;
     border-color: gray;
 } 
+
 aside nav.left-nav ul li a {
     color: #010100;
     display: block;
     padding: 10px;
     font-size: 20px;
 }
+
 aside nav.left-nav ul li a:hover {
     color: #88BCBD;
     text-decoration: none;
@@ -69,16 +76,16 @@ aside nav.left-nav ul li ul li a:hover {
     float: right;
     font-size: 10px;
 }
+
 .up-icon{
     float: right;
     font-size: 10px;
 }
 
-
 /* scrollbar */
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 /* Track */
@@ -94,4 +101,49 @@ aside nav.left-nav ul li ul li a:hover {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+}
+
+
+.categoryData{
+    background-color:white;
+    margin-left: 250px;
+}
+@media only screen and (max-width: 990px){
+    .categoryData{
+        margin-left: 180px;
+    }
+}
+  
+/* on hover display list */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10!important;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
