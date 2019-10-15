@@ -120,12 +120,20 @@
         </div>     --}}
 
         <div class = "row">
-            <div class = "col-8">
+            <div class = "col-6">
                 <div class="form-group">
                     {{Form::label('body','Compatibility')}}
                     {{Form::text('compatibility','',[ 'id'=>'article-ckeditor', 'class'=>'form-control', 'placeholder'=>'Compatibility'])}}
                 </div>    
             </div>
+
+            <div class = "col-2">
+                <div class="form-group">
+                    {{Form::label('number','In Stock')}}
+                    {{Form::text('inStock','',[ 'id'=>'article-ckeditor', 'class'=>'form-control', 'placeholder'=>'1,2,3.....'])}}
+                </div>    
+            </div>
+
             <div class = "col-4">
                 <div class="form-group">
                     {{Form::label('body','Category Id')}}

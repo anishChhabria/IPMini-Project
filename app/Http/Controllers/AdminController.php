@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\processors;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+
+
 class AdminController extends Controller
 {
     /**
@@ -13,7 +17,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.admin');
+
+        $products = processors::get();
+        // return($products);
+        return view('admin.products')->with('showproducts',$products);
     }
 
     /**
@@ -123,6 +130,7 @@ class AdminController extends Controller
         $processor->cache = $request->input('cache');
         $processor->compatibility = $request->input('compatibility');
         $processor->categoryId = $request->input('categoryId');
+        $processor->inStock = $request->input('inStock');
         $processor->p_image1 = $fileNameToStore1;
         $processor->p_image2 = $fileNameToStore2;
         $processor->p_image3 = $fileNameToStore3;
@@ -142,6 +150,11 @@ class AdminController extends Controller
      */
     public function show($id)
     {
+        // return($id);
+        $products = processors::get()->where('modelNo','=',$id);
+        // return($products);
+        $modelNo = $products[0]->modelNo;
+        return view('admin.viewProduct')->with('viewproduct',($products[0]))->with('model', $modelNo);
     }
 
     /**
@@ -152,7 +165,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = processors::get()->where('modelNo','=',$id);
+        // return($products);
+        return view('admin.editProduct')->with('editproduct',($products[0]));
     }
 
     /**
@@ -162,9 +177,49 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required',
+            'description' => 'required',
+            'serialNo' => 'required',
+            'modelNo' => 'required',
+            'category' => 'required',
+            'productName' => 'required',
+            'codeName' => 'required',
+            'price' => 'required',
+            'generation' => 'required',
+            'cores' => 'required',
+            'threads' => 'required',
+            'baseSpeed' => 'required',
+            'turboSpeed' => 'required',
+            'cache' => 'required',     
+            'compatibility' => 'required',
+            'categoryId' => 'required'
+        ]);
+
+        $title = $request->input('title');
+        $description = $request->input('description');
+        $serialNo = $request->input('serialNo');
+        $modelNo = $request->input('modelNo');
+        $category = $request->input('category');
+        $productName = $request->input('productName');
+        $price = $request->input('price');
+        $generation = $request->input('generation');
+        $cores = $request->input('cores');
+        $threads = $request->input('threads');
+        $baseSpeed = $request->input('baseSpeed');
+        $turboSpeed = $request->input('turboSpeed');
+        $cache = $request->input('cache');
+        $compatibility = $request->input('compatibility');
+        $categoryId = $request->input('categoryId');
+
+        $result = DB::table('processors')->update(['title' => $title, 'description' => $description, 'serialNo' => $serialNo, 'modelNo'=>$modelNo, 'categoryId'=>$category,'productName'=>$productName,'price'=>$price,'generation'=>$generation,'cores'=>$cores, 'threads'=>$threads, 'baseSpeed'=>$baseSpeed, 'cache'=>$cache,'turboSpeed'=>$turboSpeed,'compatibility'=>$compatibility,'categoryId'=>$categoryId   ]);
+
+        if($result){
+            return redirect('/admin/home')->with('success', 'Product details updated');
+        }
+
     }
 
     /**
@@ -185,9 +240,13 @@ class AdminController extends Controller
      * Redirect to the admin page to delete old and obsolute products
      * @return \Illuminate\Http\Response
      */
-    public function deleteproduct()
+    public function deleteproduct($id)
     {
-        return view("admin.deleteProducts");
+        $result = processors::where('modelNo', '=', $id )->delete();
+            if($result){
+                return redirect('/admin/home')->with('success','Record has been deleted');
+        }
+        
     }
 
 
@@ -227,6 +286,20 @@ class AdminController extends Controller
             'serialNo' => 'required'
         ]);
         if($request->input('component') == 'processors'){
+            $pro = processors::where('serialno', '=', $request->input('serialNo'))->get();
+            // return($pro[0]);
+            if($pro[0]->p_image1 != 'noimagetostore.jpg'){
+                // deleting img1
+                Storage::delete('public/processor_images/'.$pro[0]->p_image1);
+            }
+            if($pro[0]->p_image2 != 'noimagetostore.jpg'){
+                // deleting img1
+                Storage::delete('public/processor_images/'.$pro[0]->p_image2);
+            }
+            if($pro[0]->p_image3 != 'noimagetostore.jpg'){
+                // deleting img1
+                Storage::delete('public/processor_images/'.$pro[0]->p_image3);
+            }
             $result = processors::where('serialno', '=', $request->input('serialNo') )->delete();
             if($result){
                 return redirect('/admin/home')->with('success','Record has been deleted');

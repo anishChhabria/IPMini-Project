@@ -15,10 +15,10 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     {
-        $profile['fname'] = "Anish";
-        $profile['lname' ] = "Chhabria";
+        $profile['fname'] = "jatin";
+        $profile['lname' ] = "Acharya";
         // $profile['mobile number' ] = "Chhabria";
-        $profile['email' ] = "anish.chhabria087@gmail.com";
+        $profile['email' ] = "jatin@gmail.com";
         // $profile['address' ] = "Chhabria";
         // $profile['gender' ] = "Chhabria";
         // $profile['password' ] = "Chhabria";
@@ -54,12 +54,11 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        // return('gg');
         $this->validate($request,[
             'first_name' => 'required|String',
             'mid_name' => 'required|String',
             'last_name' => 'required|String',
-            'phone_no' => 'required|min:9000000000|max:9999999999|Numeric',
+            'phone_no' => 'required|Numeric',
             'date_of_birth' => 'required|Date',
             'gender' => 'required|String',
             'address_line_1' => 'required',
@@ -67,7 +66,8 @@ class ProfileController extends Controller
             'address_line_3' => 'required',
             'address_line_4' => 'required',
             'state'=> 'required'
-        ]);
+            ]);
+            // return($request);
         $user = new Users();
         // return($request->input('first_name'));
         $user->email_id = $request->input('email_id');

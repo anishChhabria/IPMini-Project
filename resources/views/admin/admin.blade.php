@@ -9,10 +9,16 @@
 </head>
 <body>
     <div class = "container">
-        <button class = "btn btn-outline-primary" onclick="window.location='{{ url("admin/addProducts") }}'"> Add Product</button>
-        <button class = "btn btn-outline-danger" onclick="window.location='{{ url("admin/deleteProduct") }}'"> Delete Product</button>
-        <button class = "btn btn-outline-info" onclick="window.location='{{ url("admin/addOffers") }}'"> Add Offers</button>
         <div class="content">
+                <button class = "btn btn-outline-primary" onclick="window.location='{{ url("admin/addProducts") }}'"> Add Product</button>
+                {{-- <button class = "btn btn-outline-danger" onclick="window.location='{{ url("admin/deleteProduct") }}'"> Delete Product</button>
+                <button class = "btn btn-outline-info" onclick="window.location='{{ url("admin/addOffers") }}'"> Add Offers</button>
+                <button class = "btn btn-outline-info" onclick="window.location='{{ url("admin/deleteOffer") }}'"> Dpproelete Offers</button>
+                <button class = "btn btn-outline-info" onclick="window.location='{{ url("admin/editProduct") }}'"> Edit Product</button> --}}
+                {{-- {!! $products['modelNo'] !!} --}}
+
+
+                
             @include('inc.message')
             @yield('adminview')
         </div>
