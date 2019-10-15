@@ -3,13 +3,16 @@
 @section('content')
 <style>
 #flex{
-        display: inline-flex;
+		display: inline-flex;
+}
+.profile{
+	padding-top: 15px;
 }
 
 </style>
 <script src="https://www.google.com/reCAPTCHA/api.js" async defer></script>	
 
-<div class ="container" >
+<div class ="container profile" >
         <form action = "/profile/store" method ="POST" class = "form-horizontal" autocomplete="off" >
              {{-- {!! Form::open(['method'=> 'POST', 'action'=>'ProfileController@store'])!!} --}}
                 @csrf

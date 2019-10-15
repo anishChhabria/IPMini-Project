@@ -67,7 +67,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/hard-disk.png') }}" alt="storage"> &nbsp;
+                            <img src="{{ asset('images/icon/hard-disk.png') }}" alt="storage"> 
                             Storage
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -85,7 +85,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/power.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/power.png') }}" alt="power supply">
                             Power Supply
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -103,7 +103,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/cabinate.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/cabinate.png') }}" alt="cabinate">
                             Cabinate
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -121,7 +121,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/cooler.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/cooler.png') }}" alt="cooling">
                             Cooling
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -138,7 +138,7 @@
             </nav>
         </aside>
     </nav> 
-    <div class="customData">
+    <div class="categoryData">
         
     
     
@@ -167,5 +167,12 @@
         // $.fn.matchHeight._maintainScroll = true;
       }, 1000);
     }); 
+
+    $('.side-menu li').on('click', 'a', function(x){
+        x.preventDefault();
+        $(this).find('i').toggleClass("fa fa-chevron-down down-icon");
+        $(this).find('i').toggleClass("fa fa-chevron-up up-icon");
+    });
+
     </script>
 @endsection

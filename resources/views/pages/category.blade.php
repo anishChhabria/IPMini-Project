@@ -13,7 +13,15 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Intel</a>
+                                <div class="dropdown">
+                                    <a href="#">Intel</a>
+                                    <div class="dropdown-content">
+                                        <a href="#">i3</a>
+                                        <a href="#">i5</a>
+                                        <a href="#">i7</a>
+                                        <a href="#">i9</a>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <a href="#">AMD</a>
@@ -67,7 +75,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/hard-disk.png') }}" alt="storage"> &nbsp;
+                            <img src="{{ asset('images/icon/hard-disk.png') }}" alt="storage"> 
                             Storage
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -85,7 +93,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/power.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/power.png') }}" alt="power supply">
                             Power Supply
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -103,7 +111,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/cabinate.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/cabinate.png') }}" alt="cabinate">
                             Cabinate
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -121,7 +129,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/cooler.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/cooler.png') }}" alt="cooling">
                             Cooling
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -139,21 +147,33 @@
         </aside>
     </nav> 
     <div class="categoryData">
-        
-    
-    
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>       
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="Los Angeles" width="auto" height="500">
+                </div>
+                <div class="carousel-item">
+                <img src="{{asset('images/category/NvidiaRTX2080ti.jpg')}}" alt="Chicago" width="auto" height="500">
+                </div>
+                <div class="carousel-item">
+                <img src="{{asset('images/category/asusRogz390.jpg')}}" alt="New York" width="auto" height="500">
+                </div>
+            </div>
+        </div>
     </div> 
-    <script>
-    
+    <script> 
     $('.side-menu li').on('click', 'a', function(e){
       if ($(this).parent().children('ul').length){
           e.preventDefault();
           $(this).addClass('active');
           $(this).parent().children('ul').slideDown();
-          setTimeout(function(){ 
-            // $.fn.matchHeight._update();
-            // $.fn.matchHeight._maintainScroll = true;
-          }, 1000);
       }	
               
     });
@@ -162,15 +182,14 @@
       e.preventDefault();
       $(this).removeClass('active');
       $(this).parent().children('ul').slideUp();  
-      setTimeout(function(){ 
-        // $.fn.matchHeight._update();
-        // $.fn.matchHeight._maintainScroll = true;
-      }, 1000);
     }); 
 
-    // $('.side-menu li').on('click', 'a', function(x){
-    //     x.preventDefault();
-    //     $(this).toggleClass("fa fa-chevron-up up-icon")
-    // });
+    $('.side-menu li').on('click', 'a', function(x){
+        x.preventDefault();
+        $(this).find('i').toggleClass("fa fa-chevron-down down-icon");
+        $(this).find('i').toggleClass("fa fa-chevron-up up-icon");
+    });
     </script>
 @endsection
+{{-- fa fa-chevron-down down-icon --}}
+{{-- fa fa-chevron-up up-icon --}}

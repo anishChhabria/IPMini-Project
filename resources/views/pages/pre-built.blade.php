@@ -80,7 +80,7 @@
             </nav>
         </aside>
     </nav>
-    <div class="brandData">
+    <div class="categoryData">
         
     
     </div>  
@@ -90,10 +90,6 @@
           e.preventDefault();
           $(this).addClass('active');
           $(this).parent().children('ul').slideDown();
-          setTimeout(function(){ 
-            // $.fn.matchHeight._update();
-            // $.fn.matchHeight._maintainScroll = true;
-          }, 1000);
       }	
               
     });
@@ -102,10 +98,12 @@
       e.preventDefault();
       $(this).removeClass('active');
       $(this).parent().children('ul').slideUp();  
-      setTimeout(function(){ 
-        // $.fn.matchHeight._update();
-        // $.fn.matchHeight._maintainScroll = true;
-      }, 1000);
+    });
+
+    $('.side-menu li').on('click', 'a', function(x){
+        x.preventDefault();
+        $(this).find('i').toggleClass("fa fa-chevron-down down-icon");
+        $(this).find('i').toggleClass("fa fa-chevron-up up-icon");
     });
     
     </script>

@@ -15,8 +15,11 @@ class NavigationController extends Controller
         $category_json = Storage::disk('local')->get('json/parts.json');
         $category_json = json_decode($category_json,true);
         // return($category_json);
-        return($category_json['processors'][0]['amd'][0]['ryzen 5']);
-        return view('pages.category');
+        // return($category_json['processors'][0]['amd'][0]['ryzen 5']);
+        $amd = $category_json['processors'][0]['amd'];
+        $intel = $category_json['processors'][0]['intel'];
+        // return($intel);
+        return view('pages.category')->with('intel', $intel)->with('amd',$amd);
     }
     public function brand()
     {
