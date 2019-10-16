@@ -49,4 +49,12 @@ class NavigationController extends Controller
     {
         return view('pages.offers');
     }
+    public function cart()
+    {
+        return view('pages.cart');
+    }
+    public function wishlist()
+    {
+        return view('pages.wishlist');
+    }
 }

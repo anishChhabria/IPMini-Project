@@ -22,12 +22,13 @@
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                 </a>
             </div>
+            <div class="col-2">
                 @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <li class="nav-item" style="padding:0px">
+                        <a class="nav-link" href="{{ route('login') }}" style="padding: 0px;">{{ __('Login') }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <li class="nav-item" style="padding: 0px;">
+                        <a class="nav-link" href="{{ route('register') }}" style="padding: 0px;">{{ __('Register') }}</a>
                     </li>
                 @else
                     <li class="nav-item dropdown">
@@ -47,6 +48,7 @@
                         </div>
                     </li>
                 @endguest
+            </div>
         </div>
     </nav> 
     <nav id="topNav2" class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
@@ -97,7 +99,7 @@
     </nav>
 </div>
 
-<div class="container content" style="position:relative; z-index:-1">
+<div class="container content">
     @yield('content')
 </div>
 

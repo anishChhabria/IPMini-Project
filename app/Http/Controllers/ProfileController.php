@@ -15,10 +15,10 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     {
-        $profile['fname'] = "Anish";
-        $profile['lname' ] = "Chhabria";
+        $profile['fname'] = "";
+        $profile['lname' ] = "";
         // $profile['mobile number' ] = "Chhabria";
-        $profile['email' ] = "anish.chhabria087@gmail.com";
+        $profile['email' ] = "2017.anshul.chaudhary@ves.ac.in";
         // $profile['address' ] = "Chhabria";
         // $profile['gender' ] = "Chhabria";
         // $profile['password' ] = "Chhabria";

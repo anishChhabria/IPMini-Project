@@ -85,7 +85,7 @@
     
     </div>  
     <script>
-    $('.side-menu li').on('click', 'a', function(e){
+    $('.side-menu li').on('click', 'a[href*="#"]', function(e){
       if ($(this).parent().children('ul').length){
           e.preventDefault();
           $(this).addClass('active');
@@ -94,17 +94,16 @@
               
     });
   
-    $('.side-menu li').on('click', 'a.active', function(e){
+    $('.side-menu li').on('click', 'a[href*="#"].active', function(e){
       e.preventDefault();
       $(this).removeClass('active');
       $(this).parent().children('ul').slideUp();  
-    });
+    }); 
 
-    $('.side-menu li').on('click', 'a', function(x){
+    $('.side-menu li').on('click', 'a[href*="#"]', function(x){
         x.preventDefault();
         $(this).find('i').toggleClass("fa fa-chevron-down down-icon");
         $(this).find('i').toggleClass("fa fa-chevron-up up-icon");
     });
-    
     </script>
 @endsection

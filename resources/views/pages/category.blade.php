@@ -13,7 +13,7 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Intel</a>
+                                <a href="/intel" id="intel">Intel</a>
                             </li>
                             <li>
                                 <a href="#">AMD</a>
@@ -21,7 +21,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="link" href="#">
+                        <a class="link" href="#" id="amd">
                             <img src="{{ asset('images/icon/motherboard.png') }}" alt="motherboard">
                             Motherboard
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
@@ -159,14 +159,27 @@
                 </div>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit unde saepe beatae inventore harum nam earum exercitationem laboriosam qui natus a temporibus voluptatum quisquam eveniet, ullam debitis non sunt.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure culpa laborum eligendi voluptates et explicabo atque. Illum aperiam adipisci doloribus, architecto, vero dicta quibusdam, provident nostrum voluptates ducimus iste aut!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa totam quis soluta officia incidunt magni odio optio unde mollitia? Porro maxime commodi hic accusantium possimus repellat in suscipit harum tempora.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero sint sit dignissimos fugiat voluptatibus odio natus nisi? Tenetur eos dolore inventore neque similique corrupti quasi aut placeat temporibus, nemo accusantium?</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi velit dicta praesentium quas, animi ab, odio illo libero nemo maxime necessitatibus reiciendis, neque minus fuga enim! Velit voluptas enim officiis.</p>
+        <div>
+            @for ($i = 1; $i < 10; $i++)
+                {{-- @if ($i-1/3 == 0 )
+                    <br>
+                @endif --}}
+                <div class="col-md-6">
+                    <div class="product-top">
+                        <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="hello" height="150" width="auto">
+                        <div class="overlay">
+                        </div>
+                        <div style="text-align:center;">
+                            asus Motherboard
+                        </div>
+                    </div>
+                </div>   
+                
+            @endfor
+        </div>
     </div> 
     <script> 
-    $('.side-menu li').on('click', 'a', function(e){
+    $('.side-menu li').on('click', 'a[href*="#"]', function(e){
       if ($(this).parent().children('ul').length){
           e.preventDefault();
           $(this).addClass('active');
@@ -175,13 +188,13 @@
               
     });
   
-    $('.side-menu li').on('click', 'a.active', function(e){
+    $('.side-menu li').on('click', 'a[href*="#"].active', function(e){
       e.preventDefault();
       $(this).removeClass('active');
       $(this).parent().children('ul').slideUp();  
     }); 
 
-    $('.side-menu li').on('click', 'a', function(x){
+    $('.side-menu li').on('click', 'a[href*="#"]', function(x){
         x.preventDefault();
         $(this).find('i').toggleClass("fa fa-chevron-down down-icon");
         $(this).find('i').toggleClass("fa fa-chevron-up up-icon");
