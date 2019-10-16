@@ -214,8 +214,8 @@ class AdminController extends Controller
         $compatibility = $request->input('compatibility');
         $categoryId = $request->input('categoryId');
 
-        $result = DB::table('processors')->update(['title' => $title, 'description' => $description, 'serialNo' => $serialNo, 'modelNo'=>$modelNo, 'categoryId'=>$category,'productName'=>$productName,'price'=>$price,'generation'=>$generation,'cores'=>$cores, 'threads'=>$threads, 'baseSpeed'=>$baseSpeed, 'cache'=>$cache,'turboSpeed'=>$turboSpeed,'compatibility'=>$compatibility,'categoryId'=>$categoryId   ]);
-
+        $result = DB::table('processors')->where('modelNo',$modelNo)->update(['title' => $title, 'description' => $description, 'modelNo'=>$modelNo, 'categoryId'=>$category,'productName'=>$productName,'price'=>$price,'generation'=>$generation,'cores'=>$cores, 'threads'=>$threads, 'baseSpeed'=>$baseSpeed, 'cache'=>$cache,'turboSpeed'=>$turboSpeed,'compatibility'=>$compatibility,'categoryId'=>$categoryId   ]);
+        // return($result);
         if($result){
             return redirect('/admin/home')->with('success', 'Product details updated');
         }
