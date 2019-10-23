@@ -15,12 +15,12 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
 
-        $products = processors::get();
+        $tabledata = DB::table($id)->get();
         // return($products);
-        return view('admin.products')->with('showproducts',$products);
+        return view('admin.products')->with('showproducts',$tabledata);
     }
 
     /**
@@ -229,6 +229,18 @@ class AdminController extends Controller
         // return("gg");
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function dashboard()
+    {
+        $result = DB::table('productCategory')->get(['categoryName']);
+        // return($result);
+        return view('admin.adminDashboard')->with('products', $result);
+    }
 
 
     /**

@@ -43,7 +43,8 @@ Route::post('/profile/store', "ProfileController@store" );
 
 
 Route::group(['prefix' => 'admin'],function(){
-    route::get('/home', 'AdminController@index');
+    route::get('/products/{id}', 'AdminController@index');
+    route::get('/dashboard', 'AdminController@dashboard');
     route::get('/deleteProduct/{id}', 'AdminController@deleteproduct');
     route::post('/updateProduct', 'AdminController@update');
     route::get('/addProducts', 'AdminController@addproduct');
