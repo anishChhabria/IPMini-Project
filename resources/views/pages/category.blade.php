@@ -13,10 +13,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="/intel" id="intel">Intel</a>
+                                <a href="/product/intel" id="intel">Intel</a>
                             </li>
                             <li>
-                                <a href="#">AMD</a>
+                                <a href="/product/AMD">AMD</a>
                             </li>
                         </ul>
                     </li>
@@ -28,10 +28,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Intel platform</a>
+                                <a href="/product/intelPlatform">Intel platform</a>
                             </li>
                             <li>
-                                <a href="#">AMD platform</a>
+                                <a href="/product/amdPlatform">AMD platform</a>
                             </li>
                         </ul>
                     </li>
@@ -43,10 +43,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">DDR3</a>
+                                <a href="/product/DDR3">DDR3</a>
                             </li>
                             <li>
-                                <a href="#">DDR4</a>
+                                <a href="/product/DDR4">DDR4</a>
                             </li>
                         </ul>
                     </li>
@@ -139,44 +139,7 @@
         </aside>
     </nav> 
     <div class="categoryData">
-        <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>       
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="Los Angeles" width="auto" height="500">
-                </div>
-                <div class="carousel-item">
-                <img src="{{asset('images/category/NvidiaRTX2080ti.jpg')}}" alt="Chicago" width="auto" height="500">
-                </div>
-                <div class="carousel-item">
-                <img src="{{asset('images/category/asusRogz390.jpg')}}" alt="New York" width="auto" height="500">
-                </div>
-            </div>
-        </div>
-        <div>
-            @for ($i = 1; $i < 10; $i++)
-                {{-- @if ($i-1/3 == 0 )
-                    <br>
-                @endif --}}
-                <div class="col-md-6">
-                    <div class="product-top">
-                        <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="hello" height="150" width="auto">
-                        <div class="overlay">
-                        </div>
-                        <div style="text-align:center;">
-                            asus Motherboard
-                        </div>
-                    </div>
-                </div>   
-                
-            @endfor
-        </div>
+        @yield('category')
     </div> 
     <script> 
     $('.side-menu li').on('click', 'a[href*="#"]', function(e){

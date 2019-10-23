@@ -22,20 +22,25 @@
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                 </a>
             </div>
-            <div class="col-2">
+            {{-- <div class="col-2"> --}}
                 @guest
-                    <li class="nav-item" style="padding:0px">
+                <div class="col-1 userprofile">
+                    <li class="nav-item " style="padding:0px">
                         <a class="nav-link" href="{{ route('login') }}" style="padding: 0px;">{{ __('Login') }}</a>
                     </li>
+                </div>
+                <div class="col-1 userprofile">
                     <li class="nav-item" style="padding: 0px;">
                         <a class="nav-link" href="{{ route('register') }}" style="padding: 0px;">{{ __('Register') }}</a>
                     </li>
+                </div>
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="z-index: 1000; position: absolute;">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="z-index: 6; position: absolute;">
+                            <a class="dropdown-item" href="/profile">Profile</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

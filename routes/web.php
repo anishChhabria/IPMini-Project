@@ -53,3 +53,10 @@ route::get('/Compare/ramCompare','CompareController@ramCompare');
 route::get('/Compare/powersupplyCompare','CompareController@powersupplyCompare');
 route::get('/Compare/storageCompare','CompareController@storageCompare');
 route::get('/Compare/cabinateCompare','CompareController@cabinateCompare');
+
+route::get('/Payment','PaymentController@payment');
+
+
+route::group(['prefix' => 'product' ],function(){
+    route::get('/{id}', 'CategoryController@show');
+});

@@ -31,8 +31,6 @@
         </aside>
     </nav>
     <div class="categoryData">
-        <div class="row">
-            @yield('compare')    
-        </div>
+        @yield('compare')    
     </div>  
 @endsection
