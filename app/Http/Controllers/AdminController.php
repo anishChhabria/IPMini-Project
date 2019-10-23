@@ -44,7 +44,6 @@ class AdminController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'description' => 'required',
-            'serialNo' => 'required',
             'modelNo' => 'required',
             'category' => 'required',
             'productName' => 'required',
@@ -112,9 +111,8 @@ class AdminController extends Controller
         }else{
             $fileNameToStore3 = "noimagetostore.jpg"; 
         }
-
-        $processor = new processors();
-        $processor->serialNo = $request->input('serialNo');
+        
+        $processor = new processors();  
         $processor->modelNo = $request->input('modelNo');
         $processor->title = $request->input('title');
         $processor->description = $request->input('description');
@@ -182,7 +180,6 @@ class AdminController extends Controller
         $this->validate($request,[
             'title' => 'required',
             'description' => 'required',
-            'serialNo' => 'required',
             'modelNo' => 'required',
             'category' => 'required',
             'productName' => 'required',
@@ -200,7 +197,6 @@ class AdminController extends Controller
 
         $title = $request->input('title');
         $description = $request->input('description');
-        $serialNo = $request->input('serialNo');
         $modelNo = $request->input('modelNo');
         $category = $request->input('category');
         $productName = $request->input('productName');

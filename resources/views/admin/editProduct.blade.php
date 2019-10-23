@@ -3,14 +3,7 @@
     @section('adminview')
     {!! Form::open(['action'=>'AdminController@update', 'id'=>'{{$editproduct["modelNo"]}}','method'=>'POST', 'enctype'=>'multipart/form-data' ,'autocomplete' => 'off']) !!}
         
-    <div class = "row">
-        <div class="col-4">
-            <div class = "form-group">
-                {{Form::label('text', 'Serial Number')}}
-                {{Form::text('serialNo',$editproduct["serialNo"],['class'=>'form-control', 'placeholder'=>'Serial Number'])}}
-            </div>
-        </div>  
-        
+    <div class = "row">       
         <div class="col-4">
             <div class = "form-group">
                 {{Form::label('text', 'Model Number')}}

@@ -11,7 +11,6 @@
                     {{Form::text('serialNo','',['class'=>'form-control', 'placeholder'=>'Serial Number'])}}
                 </div>
             </div>  
-            
             <div class="col-4">
                 <div class = "form-group">
                     {{Form::label('text', 'Model Number')}}
