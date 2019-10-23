@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Session;
 use App\Users;
+use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
     /**
@@ -15,15 +16,23 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     {
-        $profile['fname'] = "jatin";
-        $profile['lname' ] = "Acharya";
+
+        $str_arr  = explode(" ",Auth::user()->name);
+        // return($str_arr);
+        // return(Auth::user()->email);
+        $profile['fname'] = $str_arr[0];
+        if(isset($str_arr[1])){
+            $profile['lname' ] = $str_arr[1];
+        }else{
+            $profile['lname' ] = " ";
+        }
         // $profile['mobile number' ] = "Chhabria";
-        $profile['email' ] = "jatin@gmail.com";
+        $profile['email' ] = Auth::user()->email;
         // $profile['address' ] = "Chhabria";
         // $profile['gender' ] = "Chhabria";
         // $profile['password' ] = "Chhabria";
         // $profile['confirm password' ] = "Chhabria";
-        // return $profile['name'];
+        // return $profile;
         Session::put('user', $profile);
         if($request->session()->has('user'))
     {
@@ -58,8 +67,8 @@ class ProfileController extends Controller
             'first_name' => 'required|String',
             'mid_name' => 'required|String',
             'last_name' => 'required|String',
-            'phone_no' => 'required|Numeric',
-            'date_of_birth' => 'required|Date',
+            'phone_no' => 'required|min:7000000000|max:9999999999|Numeric',
+            // 'date_of_birht' => 'required|Date Format|Before(1/1/15)',
             'gender' => 'required|String',
             'address_line_1' => 'required',
             'address_line_2' => 'required',

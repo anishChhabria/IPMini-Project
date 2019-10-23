@@ -13,25 +13,25 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Intel</a>
+                                <a href="/product/intel" id="intel">Intel</a>
                             </li>
                             <li>
-                                <a href="#">AMD</a>
+                                <a href="/product/AMD">AMD</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a class="link" href="#">
+                        <a class="link" href="#" id="amd">
                             <img src="{{ asset('images/icon/motherboard.png') }}" alt="motherboard">
                             Motherboard
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Intel platform</a>
+                                <a href="/product/intelPlatform">Intel platform</a>
                             </li>
                             <li>
-                                <a href="#">AMD platform</a>
+                                <a href="/product/amdPlatform">AMD platform</a>
                             </li>
                         </ul>
                     </li>
@@ -43,10 +43,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">DDR3</a>
+                                <a href="/product/DDR3">DDR3</a>
                             </li>
                             <li>
-                                <a href="#">DDR4</a>
+                                <a href="/product/DDR4">DDR4</a>
                             </li>
                         </ul>
                     </li>
@@ -67,7 +67,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/hard-disk.png') }}" alt="storage"> &nbsp;
+                            <img src="{{ asset('images/icon/hard-disk.png') }}" alt="storage"> 
                             Storage
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -85,7 +85,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/power.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/power.png') }}" alt="power supply">
                             Power Supply
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -103,7 +103,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/cabinate.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/cabinate.png') }}" alt="cabinate">
                             Cabinate
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -121,7 +121,7 @@
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/cooler.png') }}" alt="storage">
+                            <img src="{{ asset('images/icon/cooler.png') }}" alt="cooling">
                             Cooling
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
@@ -139,38 +139,30 @@
         </aside>
     </nav> 
     <div class="categoryData">
-        
-    
-    
+        @yield('category')
     </div> 
-    <script>
-    
-    $('.side-menu li').on('click', 'a', function(e){
+    <script> 
+    $('.side-menu li').on('click', 'a[href*="#"]', function(e){
       if ($(this).parent().children('ul').length){
           e.preventDefault();
           $(this).addClass('active');
           $(this).parent().children('ul').slideDown();
-          setTimeout(function(){ 
-            // $.fn.matchHeight._update();
-            // $.fn.matchHeight._maintainScroll = true;
-          }, 1000);
       }	
               
     });
   
-    $('.side-menu li').on('click', 'a.active', function(e){
+    $('.side-menu li').on('click', 'a[href*="#"].active', function(e){
       e.preventDefault();
       $(this).removeClass('active');
       $(this).parent().children('ul').slideUp();  
-      setTimeout(function(){ 
-        // $.fn.matchHeight._update();
-        // $.fn.matchHeight._maintainScroll = true;
-      }, 1000);
     }); 
 
-    // $('.side-menu li').on('click', 'a', function(x){
-    //     x.preventDefault();
-    //     $(this).toggleClass("fa fa-chevron-up up-icon")
-    // });
+    $('.side-menu li').on('click', 'a[href*="#"]', function(x){
+        x.preventDefault();
+        $(this).find('i').toggleClass("fa fa-chevron-down down-icon");
+        $(this).find('i').toggleClass("fa fa-chevron-up up-icon");
+    });
     </script>
 @endsection
+{{-- fa fa-chevron-down down-icon --}}
+{{-- fa fa-chevron-up up-icon --}}

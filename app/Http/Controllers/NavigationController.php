@@ -9,7 +9,7 @@ class NavigationController extends Controller
 {
     public function index()
     {
-        return view('pages.category');
+        return view('categoryPage.defaultcategory');
     }
     public function category()
     {
@@ -20,7 +20,7 @@ class NavigationController extends Controller
         $amd = $category_json['processors'][0]['amd'];
         $intel = $category_json['processors'][0]['intel'];
         // return($intel);
-        return view('pages.category')->with('intel', $intel)->with('amd',$amd);
+        return view('categoryPage.defaultCategory');
     }
     public function brand()
     {
@@ -51,5 +51,13 @@ class NavigationController extends Controller
     public function offers()
     {
         return view('pages.offers');
+    }
+    public function cart()
+    {
+        return view('pages.cart');
+    }
+    public function wishlist()
+    {
+        return view('pages.wishlist');
     }
 }

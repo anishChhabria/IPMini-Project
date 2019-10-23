@@ -249,34 +249,48 @@
             </nav>
         </aside>
     </nav>
-    <div class="brandData">
-        
-    
-    </div>  
+    <div class="categoryData">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>       
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                    <img src="{{asset('images/brand/corsairSetup.png')}}" alt="CorsairSetup" width="auto" height="500">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="{{asset('images/brand/GskillpTridentZ.jpg')}}" alt="GskillRgbRam" width="auto" height="500">
+                    </div>
+                    <div class="carousel-item active">
+                    <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="asus" width="auto" height="500">
+                    </div>
+                </div>
+            </div>
+        </div>  
     <script>
-        $('.side-menu li').on('click', 'a', function(e){
-	  
+        $('.side-menu li').on('click', 'a[href*="#"]', function(e){
       if ($(this).parent().children('ul').length){
           e.preventDefault();
           $(this).addClass('active');
           $(this).parent().children('ul').slideDown();
-          setTimeout(function(){ 
-            // $.fn.matchHeight._update();
-            // $.fn.matchHeight._maintainScroll = true;
-          }, 1000);
       }	
               
     });
   
-    $('.side-menu li').on('click', 'a.active', function(e){
+    $('.side-menu li').on('click', 'a[href*="#"].active', function(e){
       e.preventDefault();
       $(this).removeClass('active');
       $(this).parent().children('ul').slideUp();  
-      setTimeout(function(){ 
-        // $.fn.matchHeight._update();
-        // $.fn.matchHeight._maintainScroll = true;
-      }, 1000);
+    }); 
+
+    $('.side-menu li').on('click', 'a[href*="#"]', function(x){
+        x.preventDefault();
+        $(this).find('i').toggleClass("fa fa-chevron-down down-icon");
+        $(this).find('i').toggleClass("fa fa-chevron-up up-icon");
     });
-    
     </script>
 @endsection

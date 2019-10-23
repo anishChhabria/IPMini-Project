@@ -14,18 +14,45 @@
             </div>
             <div class="col-1 wishlist">
                 <a id="wishlist" class="plain wishlist" href="/wishlist">
-                    <i class="fa fa-heart" aria-hidden="true"></i> wishlist
+                    <i class="fa fa-heart" aria-hidden="true"></i> Wishlist
                 </a>
             </div>
-            <div class="col-2 cart">
+            <div class="col-1 cart">
                 <a id="cart" class="plain cart" href="/cart">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 99-items 
-                    <br>
-                    ₹-100000      
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                 </a>
             </div>
-            <div class="col-1 userprofile">
-                <a class="plain" href="#">LogIn/Register</a>
+            {{-- <div class="col-2"> --}}
+                @guest
+                <div class="col-1 userprofile">
+                    <li class="nav-item " style="padding:0px">
+                        <a class="nav-link" href="{{ route('login') }}" style="padding: 0px;">{{ __('Login') }}</a>
+                    </li>
+                </div>
+                <div class="col-1 userprofile">
+                    <li class="nav-item" style="padding: 0px;">
+                        <a class="nav-link" href="{{ route('register') }}" style="padding: 0px;">{{ __('Register') }}</a>
+                    </li>
+                </div>
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="z-index: 6; position: absolute;">
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
             </div>
         </div>
     </nav> 
@@ -56,11 +83,6 @@
                             Custom-built 
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Monitor" data-target="monitor">
-                            Monitor
-                        </a>
-                    </li>  
                     <li class="nav-item">
                         <a class="nav-link" href="/Accessories">
                             Accessories
