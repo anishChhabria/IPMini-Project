@@ -78,11 +78,11 @@
                             Pre-built
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="/Custombuilt" data-target="custom-built">
                             Custom-built 
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="/Accessories">
                             Accessories
