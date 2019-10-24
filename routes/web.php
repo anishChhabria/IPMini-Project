@@ -41,7 +41,7 @@ route::get('/wishlist','NavigationController@wishlist');
 Route::get('/profile', "ProfileController@index" );
 Route::post('/profile/store', "ProfileController@store" );
 
-
+// amin page
 Route::group(['prefix' => 'admin'],function(){
     route::get('/products/{id}', 'AdminController@index');
     route::get('/dashboard', 'AdminController@dashboard');
@@ -69,7 +69,13 @@ route::get('/Compare/cabinateCompare','CompareController@cabinateCompare');
 
 route::get('/Payment','PaymentController@payment');
 
-
+//category page 
 route::group(['prefix' => 'product' ],function(){
     route::get('/{id}', 'CategoryController@show');
+});
+
+
+//display product by category
+route::group(['prefix' => 'category/product'],function(){
+    route::get('/{categoryId}/{modelNo}','CategoryController@displayProduct');
 });

@@ -1,6 +1,7 @@
 @extends('navbar.navbar')
 
 @section('content')
+
     <nav class="sidenavbar">
         <aside class="col-xs-12 col-md-12 col-lg-3 side-menu">
             <nav class="left-nav hidden-xs hidden-sm hidden-md">
@@ -58,10 +59,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">NVIDIA card</a>
+                                <a href="/product/nvidia">NVIDIA card</a>
                             </li>
                             <li>
-                                <a href="#">AMD card</a>
+                                <a href="/product/amdcard">AMD card</a>
                             </li>
                         </ul>            
                     </li>
@@ -73,13 +74,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">HDD</a>
+                                <a href="/product/hdd">HDD</a>
                             </li>
                             <li>
-                                <a href="#">SSD</a>
-                            </li>
-                            <li>
-                                <a href="#">Intel optain</a>
+                                <a href="/product/ssd">SSD</a>
                             </li>
                         </ul>            
                     </li>
@@ -91,31 +89,31 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">NON-Modular</a>
+                                <a href="/product/nonModular">NON-Modular</a>
                             </li>
                             <li>
-                                <a href="#">SEMI-Modular</a>
+                                <a href="/product/semiModular">SEMI-Modular</a>
                             </li>
                             <li>
-                                <a href="#">FULL-Modular</a>
+                                <a href="/product/fullModular">FULL-Modular</a>
                             </li>
                         </ul>            
                     </li>
                     <li>
                         <a class="link" href="#">
-                            <img src="{{ asset('images/icon/cabinate.png') }}" alt="cabinate">
-                            Cabinate
+                            <img src="{{ asset('images/icon/cabinet.png') }}" alt="cabinate">
+                            Cabinet
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">MINI-tower</a>
+                                <a href="/product/miniTower">MINI-tower</a>
                             </li>
                             <li>
-                                <a href="#">MID-tower</a>
+                                <a href="/product/midTower">MID-tower</a>
                             </li>
                             <li>
-                                <a href="#">FULL-tower</a>
+                                <a href="/product/fullTower">FULL-tower</a>
                             </li>
                         </ul>            
                     </li>
@@ -127,10 +125,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Air Cooler</a>
+                                <a href="/product/air">Air Cooler</a>
                             </li>
                             <li>
-                                <a href="#">Liquid Cooler</a>
+                                <a href="/product/liquid">Liquid Cooler</a>
                             </li>
                         </ul>            
                     </li>

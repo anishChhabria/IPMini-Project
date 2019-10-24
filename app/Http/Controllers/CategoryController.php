@@ -65,12 +65,54 @@ class CategoryController extends Controller
                 $products = DB::table($table)->get()->where('processorType', '=', $id);
                 break;
             
-            // case 
+            case 'DDR3':
+            case 'DDR4':
+                $table = 'ram';
+                $products = DB::table($table)->get()->where('memoryType', '=', $id);
+                break;
+
+            case 'nvidia':
+                $table = 'gpu';
+                $products = DB::table($table)->get()->where('brand', '=', $id);      
+                break;
+
+            case 'amdcard':
+                $table = 'gpu';
+                $id = 'amd';
+                $products = DB::table($table)->get()->where('brand', '=', $id);
+                break;
+
+            case 'hdd':
+            case 'ssd':
+                $table = 'storage';
+                $products = DB::table($table)->get()->where('type', '=', $id);
+                break;
+                
+            case 'nonModular':
+            case 'semiModular':
+            case 'fullModular':
+                $table = 'powerSupply';
+                $products = DB::table($table)->get()->where('type', '=', $id);
+                break;
+                
+            case 'miniTower':
+            case 'midTower':
+            case 'fullTower':
+                $table = 'cabinets';
+                $products = DB::table($table)->get()->where('formFactor', '=', $id);
+                break;                
+
+            case 'air':
+            case 'liquid':
+                $table = 'coolingSystem';
+                $products = DB::table($table)->get()->where('coolingType', '=', $id);
+                break;
+
             default:
                 break;
         }
         // return($products);
-        return view('categoryPage.processorIntel')->with('products',$products);
+        return view('categoryPage.categoryProduct')->with('products',$products);
     }
 
     /**
@@ -105,5 +147,15 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function displayProduct($categoryId,$modelNo){
+
+        $table = DB::table('productCategory')->where('categoryId', '=', $categoryId)->pluck('categoryName');
+        // return($table[0]);
+        $productdata = DB::table($table[0])->get()->where('modelNo','=', $modelNo);
+        // return($product);
+        return view('categoryPage.displayProduct')->with('productdata',$productdata);
+
     }
 }

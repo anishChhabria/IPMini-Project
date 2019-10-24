@@ -119,7 +119,7 @@ class AdminController extends Controller
         $processor->brand = $request->input('category');
         $processor->productName = $request->input('productName');
         $processor->codeName = $request->input('codeName');
-        $processor->price = $request->input('price');
+        $processor->cost = $request->input('price');
         $processor->generation = $request->input('generation');
         $processor->cores = $request->input('cores');
         $processor->threads = $request->input('threads');
