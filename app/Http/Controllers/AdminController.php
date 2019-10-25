@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\processors;
+use App\motherboards;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
@@ -39,9 +40,10 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeproduct(Request $request)
     {
-        $this->validate($request,[
+        if($request->input('serialNo') == 'processors'){
+            $this->validate($request,[
             'title' => 'required',
             'description' => 'required',
             'modelNo' => 'required',
@@ -135,6 +137,114 @@ class AdminController extends Controller
         
         $processor->save();
         return redirect('/admin/home')->with('success', 'Data saved');
+        }elseif($request->input('serialNo') == 'motherboards'){
+            $this->validate($request,[
+                'title' => 'required',
+                'description' => 'required',
+                'modelNo' => 'required',
+                'category' => 'required',
+                'productName' => 'required',
+                'graphicCard' => 'required',
+                'price' => 'required',
+                'hdmi2Ports' => 'required',
+                'formFactor' => 'required',
+                'itemWeight' => 'required',
+                'processorSocket' => 'required',
+                'memoryType' => 'required',     
+                'memoryTechnology' => 'required',
+                'wattage' => 'required',
+                'lithiumBattery' => 'required',
+                'nolithiumCells' => 'required',
+                'wireless' => 'required',
+                'categoryId' => 'required',
+                'mobo_image1' => 'image|max:1999',
+                'mobo_image2' => 'image|nullable|max:1999',
+                'mobo_image3' => 'image|nullable|max:1999',
+    
+    
+            ]);
+            
+            //  Handle file upload
+    
+            
+
+            if($request->hasFile('mobo_image1')){
+                // Get File Name with Extension
+                $fileNamewithExtension = $request->file('mobo_image1')->getClientOriginalName();
+                // Get just File name
+                $file = pathinfo($fileNamewithExtension, PATHINFO_FILENAME);
+                // Get just extension
+                $extension = $request->file('mobo_image1')->getClientOriginalExtension();
+                // File Name to store 
+                $fileNameToStore1 = $file.'_'.time().'.'.$extension;
+                // Upload Image
+                $path = $request->file('mobo_image1')->storeAs('public/processor_images', $fileNameToStore1);
+    
+            }else{
+                $fileNameToStore1 = "noimagetostore.jpg"; 
+            }
+            if($request->hasFile('mobo_image2')){
+                // Get File Name with Extension
+                $fileNamewithExtension = $request->file('mobo_image2')->getClientOriginalName();
+                // Get just File name
+                $file = pathinfo($fileNamewithExtension, PATHINFO_FILENAME);
+                // Get just extension
+                $extension = $request->file('mobo_image2')->getClientOriginalExtension();
+                // File Name to store 
+                $fileNameToStore2 = $file.'_'.time().'.'.$extension;
+                // Upload Image
+                $path = $request->file('mobo_image2')->storeAs('public/processor_images', $fileNameToStore2);
+    
+            }else{
+                $fileNameToStore2 = "noimagetostore.jpg"; 
+            }
+            if($request->hasFile('mobo_image3')){
+                // Get File Name with Extension
+                $fileNamewithExtension = $request->file('mobo_image3')->getClientOriginalName();
+                // Get just File name
+                $file = pathinfo($fileNamewithExtension, PATHINFO_FILENAME);
+                // Get just extension
+                $extension = $request->file('mobo_image3')->getClientOriginalExtension();
+                // File Name to store 
+                $fileNameToStore3 = $file.'_'.time().'.'.$extension;
+                // Upload Image
+                $path = $request->file('mobo_image3')->storeAs('public/processor_images', $fileNameToStore3);
+    
+            }else{
+                $fileNameToStore3 = "noimagetostore.jpg"; 
+            }
+            $processor = new motherboards();  
+            $processor->modelNo = $request->input('modelNo');
+            $processor->title = $request->input('title');
+            $processor->description = $request->input('description');
+            $processor->brand = $request->input('category');
+            $processor->cost = $request->input('price');
+            $processor->productName = $request->input('productName');
+            $processor->graphicCard = $request->input('graphicCard');
+            $processor->formFactor = $request->input('formFactor');
+            $processor->itemweight = $request->input('itemWeight');
+            $processor->hdmiPorts = $request->input('hdmi2Ports');
+            $processor->usb2Ports = $request->input('hdmi2Ports');
+            $processor->processorType = $request->input('productName');
+            $processor->memoryType = $request->input('memoryType');
+            $processor->processorSocket = $request->input('processorSocket');
+            $processor->memoryTechnology = $request->input('memoryTechnology');
+            $processor->wattage = $request->input('wattage');
+            $processor->lithiumBatteryEnerge = $request->input('nolithiumCells');
+            $processor->nolithiumCells = $request->input('nolithiumCells');
+            $processor->wirelessType = $request->input('wireless');           
+            $processor->categoryId = $request->input('categoryId');
+            $processor->inStock = $request->input('inStock');
+            $processor->includedComponents = $request->input('compatibility');
+            
+            $processor->moboImage1 = $fileNameToStore1;
+            $processor->moboImage2 = $fileNameToStore2;
+            $processor->moboImage3 = $fileNameToStore3;
+            
+            $processor->save();
+            return redirect('/admin/dashboard')->with('success', 'Data saved');
+        }
+        
         // return($request);
         
         // return('Store');
@@ -213,7 +323,7 @@ class AdminController extends Controller
         $result = DB::table('processors')->where('modelNo',$modelNo)->update(['title' => $title, 'description' => $description, 'modelNo'=>$modelNo, 'categoryId'=>$category,'productName'=>$productName,'price'=>$price,'generation'=>$generation,'cores'=>$cores, 'threads'=>$threads, 'baseSpeed'=>$baseSpeed, 'cache'=>$cache,'turboSpeed'=>$turboSpeed,'compatibility'=>$compatibility,'categoryId'=>$categoryId   ]);
         // return($result);
         if($result){
-            return redirect('/admin/home')->with('success', 'Product details updated');
+            return redirect('/admin/dashboard')->with('success', 'Product details updated');
         }
 
     }
@@ -252,8 +362,10 @@ class AdminController extends Controller
     {
         $result = processors::where('modelNo', '=', $id )->delete();
             if($result){
-                return redirect('/admin/home')->with('success','Record has been deleted');
-        }
+                return redirect('/admin/dashboard')->with('success','Record has been deleted');
+            }else{
+                return redirect('/admin/dashboard')->with('danger','Record has not been deleted');
+            }
         
     }
 
@@ -263,9 +375,10 @@ class AdminController extends Controller
      * Redirect to the admin page to delete old and obsolute products
      * @return \Illuminate\Http\Response
      */
-    public function addproduct()
+    public function addproduct($id)
     {
-        return view('admin.addProducts');
+        
+        return view('admin.addProducts')->with('productType', $id);
     }
 
 

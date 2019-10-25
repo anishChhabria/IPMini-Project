@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class processors extends Model
+class motherboards extends Model
 {
-    protected $table = 'processors';
+    //
+    protected $table = 'motherboards';
     public $primaryKey = 'modelNo';
 }

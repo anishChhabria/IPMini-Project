@@ -47,9 +47,9 @@ Route::group(['prefix' => 'admin'],function(){
     route::get('/dashboard', 'AdminController@dashboard');
     route::get('/deleteProduct/{id}', 'AdminController@deleteproduct');
     route::post('/updateProduct', 'AdminController@update');
-    route::get('/addProducts', 'AdminController@addproduct');
+    route::get('/addProducts/{id}', 'AdminController@addproduct');
     route::get('/editProduct/{id}', 'AdminController@edit');
-    route::post('/store', 'AdminController@store');
+    route::post('/store', 'AdminController@storeproduct');
     route::post('/showProducts', 'AdminController@showProducts');
     route::get('/addOffers', 'AdminController@addoffers');
     route::get('/show/{id}','AdminController@show');

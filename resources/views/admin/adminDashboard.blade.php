@@ -11,7 +11,7 @@
               <h5 class="card-title">{{ucfirst($product->categoryName)}}</h5>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="/admin/products/{{$product->categoryName}}" class="btn btn-primary">Go to {{$product->categoryName}}</a>
-                <a href="/admin/addProducts" class="btn btn-primary">Add {{$product->categoryName}}</a>
+                <a href="/admin/addProducts/{{$product->categoryName}}" class="btn btn-primary">Add {{$product->categoryName}}</a>
             </div>
             <div class="card-footer">
                 {{-- {{$product->categoryName}} --}}
