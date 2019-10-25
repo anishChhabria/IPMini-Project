@@ -4,7 +4,7 @@
     <nav class="sidenavbar">
         <aside class="col-xs-12 col-md-12 col-lg-3 side-menu">
             <nav class="left-nav hidden-xs hidden-sm hidden-md">
-                <ul>
+                <ul class="nolist">
                     <li>
                         <a class="link" href="/Compare/processorCompare">Processor</a>
                     </li>

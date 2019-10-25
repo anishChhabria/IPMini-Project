@@ -24,7 +24,7 @@ class NavigationController extends Controller
     }
     public function brand()
     {
-        return view('pages.brands');
+        return view('brandPage.defaultBrand');
     }
     public function preBuilt()
     {

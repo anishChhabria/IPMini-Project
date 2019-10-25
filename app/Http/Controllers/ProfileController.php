@@ -30,7 +30,7 @@ class ProfileController extends Controller
         $profile['email' ] = Auth::user()->email;
         // $profile['address' ] = "Chhabria";
         // $profile['gender' ] = "Chhabria";
-        // $profile['password' ] = "Chhabria";
+        // $profile['password' ] = "Chhabria";i
         // $profile['confirm password' ] = "Chhabria";
         // return $profile;
         Session::put('user', $profile);

@@ -155,7 +155,14 @@ class CategoryController extends Controller
         // return($table[0]);
         $productdata = DB::table($table[0])->get()->where('modelNo','=', $modelNo);
         // return($product);
-        return view('categoryPage.displayProduct')->with('productdata',$productdata);
+        $column =  DB::getSchemaBuilder()->getColumnListing($table[0]);
+        // return($column);
+        $brand = DB::table($table[0])->get()->where('modelNo','=', $modelNo)->pluck('brand');
+        // return($brand);
+        $productall = DB::table($table[0])->get()->where('brand','=',$brand[0])->where('modelNo','!=',$modelNo);
+        // return($productall);
+        $i=0;
+        return view('categoryPage.displayProduct')->with('productdata',$productdata)->with('column',$column)->with('i',$i)->with('products',$productall);
 
     }
 }

@@ -1,6 +1,7 @@
-@extends('pages.category')
+@extends('pages.brands')
 
-@section('category')
+@section('brand')
+    
 <br>
     {{-- {{$products}} --}}
 <div style="height=100% !important;" >
@@ -19,5 +20,6 @@
         </div>
         @endforeach
     </div>              
-</div>       
+</div>
+
 @endsection

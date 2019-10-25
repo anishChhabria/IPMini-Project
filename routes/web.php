@@ -79,3 +79,16 @@ route::group(['prefix' => 'product' ],function(){
 route::group(['prefix' => 'category/product'],function(){
     route::get('/{categoryId}/{modelNo}','CategoryController@displayProduct');
 });
+
+//cart wishlist
+route::post('/addToCart/{categoryId}/{modelNo}','CartwishlistController@addCart');
+
+//brand page
+route::group(['prefix' => 'brand'],function(){
+    route::get('/{brand}/{table}','BrandController@show');
+});
+
+//display product by brand
+route::group(['prefix' => 'brand'],function(){
+    route::get('/{brand}/{table}/{modelNo}','CategoryController@displayProduct');
+});
