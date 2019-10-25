@@ -29,7 +29,6 @@
         border-radius: 20px;
         background-color: #112D32;
         color: #88BDBC;
-        font-size: 20px;
     }
     table tr td{
         border: 1px solid;
@@ -69,10 +68,10 @@
             <form method="post" action="/addToCart/{{$showproduct->categoryId}}/{{$showproduct->modelNo}}"  style="font-size:15px;">
                 @csrf
                     Quantity:
-                    <input type="number" name="quantity" value="1" min="1" max="5" size="4"> <br><br>
+                    <input type="number" id="quantity" value="1" min="1" max="5" size="4"> <br><br>
                     <input type="submit" value="Add to cart" class="cartwish"> 
-            </form>
                     <button class="cartwish">Add to wishlist</button>
+            </form>
         </div>
     @endforeach
 </div>

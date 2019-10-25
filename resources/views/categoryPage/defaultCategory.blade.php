@@ -29,11 +29,11 @@
         </div>
     </div>
     <div>
-        <div id="asdfgh" class="col-md-12">
+        {{-- <div id="asdfgh" class="col-md-12">
         @for ($i = 1; $i < 10; $i++)
-            {{-- @if (($i-1)/3 == 0 )
+            @if (($i-1)/3 == 0 )
                 <br>
-            @endif --}}
+            @endif
             
                 <div class="product-top col-md-1">
                     <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="hello" height="150" width="auto">
@@ -45,7 +45,7 @@
                 </div>
             
             
-        @endfor
+        @endfor --}}
     </div>  
 </div>
 

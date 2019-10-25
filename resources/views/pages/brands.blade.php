@@ -12,16 +12,13 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Motherboard</a>
+                                <a href="/brand/asus/motherboards">Motherboard</a>
                             </li>
                             <li>
-                                <a href="#">Graphic card</a>
+                                <a href="/brand/asus/gpu">Graphic card</a>
                             </li>
                             <li>
-                                <a href="#">Peripherals</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
+                                <a href="/brand/asus/accessories">Peripherals</a>
                             </li>
                         </ul>
                     </li>
@@ -32,13 +29,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Monitor</a>
+                                <a href="/brand/benq/monitors">Monitor</a>
                             </li>
                             <li>
-                                <a href="#">Gaming-Mouse</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
+                                <a href="/brand/benq/accessories">Gaming-Mouse</a>
                             </li>
                         </ul>
                     </li>
@@ -49,13 +43,10 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Cabinate</a>
+                                <a href="/brand/coolerMaster/cabinets">Cabinet</a>
                             </li>
                             <li>
-                                <a href="#">Power supply</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
+                                <a href="/brand/coolerMaster/powerSupply">Power supply</a>
                             </li>
                         </ul>            
                     </li>
@@ -66,50 +57,20 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Cabinate</a>
+                                <a href="/brand/corsair/cabinets">Cabinets</a>
                             </li>
                             <li>
-                                <a href="#">Power Supply</a>
+                                <a href="/brand/corsair/powerSupply">Power Supply</a>
                             </li>
                             <li>
-                                <a href="#">Memory</a>
+                                <a href="/brand/corsair/ram">Memory</a>
                             </li>
                             <li>
-                                <a href="#">Cooling</a>
+                                <a href="/brand/corsair/coolingSystem">Cooling</a>
                             </li>
                             <li>
-                                <a href="#">Peripherals</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
-                            </li>
-                        </ul>            
-                    </li>
-                    <li>
-                        <a class="link" href="#">
-                            Deepcool
-                            <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
-                        </a>
-                        <ul class="nolist">
-                            <li>
-                                <a href="#">Cooling</a>
-                            </li>
-                            <li>
-                                <a href="#">cabinate</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
-                            </li>
-                        </ul>            
-                    </li>
-                    <li>
-                        <a class="link" href="#">
-                            Galax
-                            <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
-                        </a>
-                        <ul class="nolist">
-                            <li>
-                                <a href="#">Graphic Card</a>
+                                <a href="/brand/corsair/sccessories">Peripherals</a>
+                        
                             </li>
                         </ul>            
                     </li>
@@ -120,16 +81,14 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Motherboard</a>
+                                <a href="/brand/gigabyte/motherboards">Motherboard</a>
                             </li>
                             <li>
-                                <a href="#">Graphic Card</a>
+                                <a href="/brand/gigabyte/gpu">Graphic Card</a>
                             </li>
                             <li>
-                                <a href="#">Peripherals</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
+                                <a href="/brand/gigabyte/accessories">Peripherals</a>
+                        
                             </li>
                         </ul>            
                     </li>
@@ -140,7 +99,7 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Memory</a>
+                                <a href="/brand/G.Skill/ram">Memory</a>
                             </li>
                         </ul>            
                     </li>
@@ -151,33 +110,11 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Memory</a>
+                                <a href="/brand/hyperX/hdd">Memory</a>
                             </li>
                             <li>
-                                <a href="#">SSD</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
-                            </li>
-                        </ul>            
-                    </li>
-                    <li>
-                        <a class="link" href="#">
-                            Logitech
-                            <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
-                        </a>
-                        <ul class="nolist">
-                            <li>
-                                <a href="#">Keyboard</a>
-                            </li>
-                            <li>
-                                <a href="#">Mouse</a>
-                            </li>
-                            <li>
-                                <a href="#">Headphone</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
+                                <a href="/brand/hyperX/ssd">SSD</a>
+                        
                             </li>
                         </ul>            
                     </li>
@@ -188,13 +125,11 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Motherboard</a>
+                                <a href="/brand/msi/motherboards">Motherboard</a>
                             </li>
                             <li>
-                                <a href="#">Graphic Card</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
+                                <a href="/brand/msi/gpu">Graphic Card</a>
+                        
                             </li>
                         </ul>            
                     </li>
@@ -205,33 +140,11 @@
                         </a>
                         <ul class="nolist">
                             <li>
-                                <a href="#">Cabinate</a>
+                                <a href="/brand/nzxt/caninete">Cabinate</a>
                             </li>
                             <li>
-                                <a href="#">Cooling</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
-                            </li>
-                        </ul>            
-                    </li>
-                    <li>
-                        <a class="link" href="#">
-                            Thermaltake
-                            <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
-                        </a>
-                        <ul class="nolist">
-                            <li>
-                                <a href="#">Cabinate</a>
-                            </li>
-                            <li>
-                                <a href="#">cooling</a>
-                            </li>
-                            <li>
-                                <a href="#">Power Supply</a>
-                            </li>
-                            <li>
-                                <a href="#">View All...</a>
+                                <a href="/brand/nzxt/coolingSystem">Cooling</a>
+                        
                             </li>
                         </ul>            
                     </li>
@@ -242,7 +155,7 @@
                             </a>
                             <ul class="nolist">
                                 <li>
-                                    <a href="#">Graphic Card</a>
+                                    <a href="/brand/zotac/gpu">Graphic Card</a>
                                 </li>
                         </li>
                 </ul>
@@ -250,27 +163,8 @@
         </aside>
     </nav>
     <div class="categoryData">
-            <div id="demo" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>       
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item">
-                    <img src="{{asset('images/brand/corsairSetup.png')}}" alt="CorsairSetup" width="auto" height="500">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="{{asset('images/brand/GskillpTridentZ.jpg')}}" alt="GskillRgbRam" width="auto" height="500">
-                    </div>
-                    <div class="carousel-item active">
-                    <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="asus" width="auto" height="500">
-                    </div>
-                </div>
-            </div>
-        </div>  
+        @yield('brand')
+    </div>  
     <script>
         $('.side-menu li').on('click', 'a[href*="#"]', function(e){
       if ($(this).parent().children('ul').length){

@@ -29,7 +29,8 @@
                     @endforeach
                 @endforeach  
             </select>
-        </div>    
+        </div> 
+    <a href="/compare/processorCompare/{{}}"></a>   
     </div>
 @endsection
 
