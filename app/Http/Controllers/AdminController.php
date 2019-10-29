@@ -7,7 +7,7 @@ use App\processors;
 use App\motherboards;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -21,6 +21,7 @@ class AdminController extends Controller
 
         $tabledata = DB::table($id)->get();
         // return($products);
+        
         return view('admin.products')->with('showproducts',$tabledata);
     }
 
@@ -136,7 +137,7 @@ class AdminController extends Controller
         $processor->p_image3 = $fileNameToStore3;
         
         $processor->save();
-        return redirect('/admin/home')->with('success', 'Data saved');
+        return redirect('/admin/dashboard')->with('success', 'Data saved');
         }elseif($request->input('serialNo') == 'motherboards'){
             $this->validate($request,[
                 'title' => 'required',
@@ -237,12 +238,14 @@ class AdminController extends Controller
             $processor->inStock = $request->input('inStock');
             $processor->includedComponents = $request->input('compatibility');
             
-            $processor->moboImage1 = $fileNameToStore1;
+            $processor->p_image1 = $fileNameToStore1;
             $processor->moboImage2 = $fileNameToStore2;
             $processor->moboImage3 = $fileNameToStore3;
             
             $processor->save();
             return redirect('/admin/dashboard')->with('success', 'Data saved');
+        }else{
+
         }
         
         // return($request);
@@ -349,7 +352,13 @@ class AdminController extends Controller
     {
         $result = DB::table('productCategory')->get(['categoryName']);
         // return($result);
-        return view('admin.adminDashboard')->with('products', $result);
+        if(Auth::user()){
+            if(DB::table('admin')->get()->where('emailId','=',AUTH::user()->email)){
+                return view('admin.adminDashboard')->with('products', $result);
+            }    
+        }else{
+            return redirect('/');
+        }
     }
 
 
@@ -364,7 +373,7 @@ class AdminController extends Controller
             if($result){
                 return redirect('/admin/dashboard')->with('success','Record has been deleted');
             }else{
-                return redirect('/admin/dashboard')->with('danger','Record has not been deleted');
+                return redirect('/admin/dashboard')->with('error','Record has not been deleted');
             }
         
     }

@@ -41,7 +41,7 @@ route::get('/wishlist','NavigationController@wishlist');
 Route::get('/profile', "ProfileController@index" );
 Route::post('/profile/store', "ProfileController@store" );
 
-// amin page
+// admin page
 Route::group(['prefix' => 'admin'],function(){
     route::get('/products/{id}', 'AdminController@index');
     route::get('/dashboard', 'AdminController@dashboard');
