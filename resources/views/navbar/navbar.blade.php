@@ -98,6 +98,13 @@
                             Offers
                         </a>
                     </li>
+                    @if(Session::has('user') && Session::get('user')['email'] == '2017.anshul.chaudhary@ves.ac.in' )
+                        <li>
+                            <a href="/admin/dashboard" class="nav-link" >
+                                Admin View
+                            </a>
+                        </li>
+                    @endif
                 </ul>
             </div>   
         </div>

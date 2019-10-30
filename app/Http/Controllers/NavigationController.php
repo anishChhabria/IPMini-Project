@@ -3,13 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Session;
 use Storage;
 use App\processors;
+use Exception;
+
 class NavigationController extends Controller
 {
     public function index()
     {
-        return view('categoryPage.defaultcategory');
+        try{
+                $str_arr  = explode(" ",Auth::user()->name);
+            $profile['fname'] = $str_arr[0];
+            if(isset($str_arr[1])){
+                $profile['lname' ] = $str_arr[1];
+            }else{
+                $profile['lname' ] = " ";
+            }
+            $profile['email' ] = Auth::user()->email;
+            Session::put('user', $profile);
+            // return(Session::get('user')['email']);
+            return view('categoryPage.defaultcategory');
+        }catch(Exception $e){
+            return view('categoryPage.defaultcategory');
+        }
+        
     }
     public function category()
     {

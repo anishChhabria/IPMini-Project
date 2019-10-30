@@ -16,24 +16,6 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     {
-
-        $str_arr  = explode(" ",Auth::user()->name);
-        // return($str_arr);
-        // return(Auth::user()->email);
-        $profile['fname'] = $str_arr[0];
-        if(isset($str_arr[1])){
-            $profile['lname' ] = $str_arr[1];
-        }else{
-            $profile['lname' ] = " ";
-        }
-        // $profile['mobile number' ] = "Chhabria";
-        $profile['email' ] = Auth::user()->email;
-        // $profile['address' ] = "Chhabria";
-        // $profile['gender' ] = "Chhabria";
-        // $profile['password' ] = "Chhabria";i
-        // $profile['confirm password' ] = "Chhabria";
-        // return $profile;
-        Session::put('user', $profile);
         if($request->session()->has('user'))
     {
         $profile =  Session::get('user');

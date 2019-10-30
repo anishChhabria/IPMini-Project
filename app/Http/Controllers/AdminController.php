@@ -259,13 +259,12 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($categoryId,$modelNo)
     {
+        $producttype = DB::table('productCategory')->get()->where('categoryId','=',$categoryId)->pluck('categoryName');
         // return($id);
-        $products = processors::get()->where('modelNo','=',$id);
-        // return($products);
-        $modelNo = $products[0]->modelNo;
-        return view('admin.viewProduct')->with('viewproduct',($products[0]))->with('model', $modelNo);
+        $products = DB::table($producttype[0])->get()->where('modelNo','=',$modelNo);
+        return view('admin.viewProduct')->with('viewproduct',($products))->with('model', $modelNo)->with('categoryId',$categoryId);
     }
 
     /**
@@ -274,11 +273,14 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($categoryId,$modelNo)
     {
-        $products = processors::get()->where('modelNo','=',$id);
+        $producttype = DB::table('productCategory')->get()->where('categoryId','=',$categoryId)->pluck('categoryName');
+        // return($id);
+        $products = DB::table($producttype[0])->get()->where('modelNo','=',$modelNo);
+
         // return($products);
-        return view('admin.editProduct')->with('editproduct',($products[0]));
+        return view('admin.editProduct')->with('editproduct',($products));
     }
 
     /**
@@ -323,9 +325,11 @@ class AdminController extends Controller
         $compatibility = $request->input('compatibility');
         $categoryId = $request->input('categoryId');
 
-        $result = DB::table('processors')->where('modelNo',$modelNo)->update(['title' => $title, 'description' => $description, 'modelNo'=>$modelNo, 'categoryId'=>$category,'productName'=>$productName,'price'=>$price,'generation'=>$generation,'cores'=>$cores, 'threads'=>$threads, 'baseSpeed'=>$baseSpeed, 'cache'=>$cache,'turboSpeed'=>$turboSpeed,'compatibility'=>$compatibility,'categoryId'=>$categoryId   ]);
+        $result = DB::table('processors')->where('modelNo',$modelNo)->update(['title' => $title, 'description' => $description, 'modelNo'=>$modelNo, 'categoryId'=>$category,'productName'=>$productName,'cost'=>$price,'generation'=>$generation,'cores'=>$cores, 'threads'=>$threads, 'baseSpeed'=>$baseSpeed, 'cache'=>$cache,'turboSpeed'=>$turboSpeed,'compatibility'=>$compatibility,'categoryId'=>$categoryId   ]);
         // return($result);
         if($result){
+            return redirect('/admin/dashboard')->with('success', 'Product details updated');
+        }else{
             return redirect('/admin/dashboard')->with('success', 'Product details updated');
         }
 
@@ -367,9 +371,10 @@ class AdminController extends Controller
      * Redirect to the admin page to delete old and obsolute products
      * @return \Illuminate\Http\Response
      */
-    public function deleteproduct($id)
+    public function deleteproduct($categoryId, $modelNo)
     {
-        $result = processors::where('modelNo', '=', $id )->delete();
+        $producttype = DB::table('productCategory')->get()->where('categoryId','=',$categoryId)->pluck('categoryName');
+        $result = DB::table($producttype[0])->where('modelNo', '=', $modelNo )->delete();
             if($result){
                 return redirect('/admin/dashboard')->with('success','Record has been deleted');
             }else{
@@ -396,9 +401,12 @@ class AdminController extends Controller
      * Redirect to the admin page to delete old and obsolute products
      * @return \Illuminate\Http\Response
      */
-    public function addoffers()
+    public function addoffers(Request $request,$categoryId, $modelNo)
     {
-        return view("admin.addOffers");
+        
+        $producttype = DB::table('productCategory')->get()->where('categoryId','=',$categoryId)->pluck('categoryName');
+        $update = DB::table($producttype[0])->where('modelNo','=',$modelNo)->update(['offer'=>$request->input('offers')]);
+        return redirect('/admin/dashboard');
     }
 
 

@@ -45,14 +45,15 @@ Route::post('/profile/store', "ProfileController@store" );
 Route::group(['prefix' => 'admin'],function(){
     route::get('/products/{id}', 'AdminController@index');
     route::get('/dashboard', 'AdminController@dashboard');
-    route::get('/deleteProduct/{id}', 'AdminController@deleteproduct');
+    route::get('/deleteProduct/{categoryId}/{modelNo}', 'AdminController@deleteproduct');
     route::post('/updateProduct', 'AdminController@update');
     route::get('/addProducts/{id}', 'AdminController@addproduct');
-    route::get('/editProduct/{id}', 'AdminController@edit');
+    route::get('/editProduct/{categoryId}/{modelNo}', 'AdminController@edit');
     route::post('/store', 'AdminController@storeproduct');
     route::post('/showProducts', 'AdminController@showProducts');
-    route::get('/addOffers', 'AdminController@addoffers');
-    route::get('/show/{id}','AdminController@show');
+    route::get('/addOffers/{categoryId}/{modelNo}', 'AdminController@addoffers');
+    route::get('/show/{categoryId}/{modelNo}','AdminController@show');
+    route::get('/editOffers/{id}','AdminController@addoffers');
 });
 Auth::routes();
 

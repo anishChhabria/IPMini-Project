@@ -8,7 +8,7 @@
     <div class="card-body">
         <h5>{{$showproduct->title}}</h5>
         {{-- <p class = "card-text">{!!$showproduct->description!!}</p> --}}
-        <a href="/admin/show/{{$showproduct->modelNo}}" class= "btn btn-primarary">View</a>
+    <a href="/admin/show/{{$showproduct->categoryId}}/{{$showproduct->modelNo}}" class= "btn btn-primarary">View</a>
     </div>
 </div>             
 @endforeach
