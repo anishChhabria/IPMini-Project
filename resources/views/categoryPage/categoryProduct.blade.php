@@ -6,7 +6,6 @@
 <div style="height=100% !important;" >
     <div class = "row" style="margin:10px;">
         @foreach ($products as $showproduct)
-        
             {{-- {{$showproduct}} --}}
             <div class = "card col-md-4">
                 <a href="/category/product/{{$showproduct->categoryId}}/{{$showproduct->modelNo}}">

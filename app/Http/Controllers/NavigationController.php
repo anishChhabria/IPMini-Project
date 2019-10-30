@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Storage;
 use App\processors;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+// use Illuminate\Support\Facades\Auth;
+use Auth;
+
 class NavigationController extends Controller
 {
     public function index()
@@ -52,12 +57,69 @@ class NavigationController extends Controller
     {
         return view('pages.offers');
     }
-    public function cart()
+    public function cart(Request $request)
     {
-        return view('pages.cart');
+        if(!Auth::check()){
+            return Redirect::back()->with('alert','Please login to continue!');
+        }
+        $userId = Auth::user()->id;
+        $cartId = DB::table('cart')->where('userId', '=' , $userId)->pluck('cartId');
+        $count = DB::table('cartItems')->where('cartId',$cartId)->count();
+        if($count<=0){
+            $nullmsg = 0;
+            return view('pages.cart')->with('nullMsg',0);
+        }
+        $cart = DB::table('cartItems')->where('cartId',$cartId)->get();
+        $category = array();
+        $modelNo = array();
+        $quantity = array();
+        foreach($cart as $items){
+            $category[] = $items->categoryId;
+            $modelNo[] = $items->modelNo;
+            $quantity[] = $items->quantity;
+        }
+        $length = count($modelNo);
+        $cartItems = array();
+        $cost=0;
+        $itemNo = 0;
+        $i=0;
+        while($i<$length){
+            $table = DB::table('productCategory')->where('categoryId',$category[$i])->pluck('categoryName');
+            $cartItems[] = DB::table($table[0])->where('modelNo',$modelNo[$i])->get();
+            $costTemp = DB::table($table[0])->where('modelNo',$modelNo[$i])->pluck('cost');
+            $cost = $cost + ($costTemp[0]*$quantity[$i]);
+            $itemNo = $itemNo + $quantity[$i];
+            $i= $i+1;
+        }
+        return view('pages.cart')->with('nullMsg',1)->with('cartItems',$cartItems)->with('quantity',$quantity)->with('itemNo',$itemNo)->with('cost',$cost)->with('count',$count);
     }
-    public function wishlist()
+    public function wishlist(Request $request)
     {
-        return view('pages.wishlist');
+        if(!Auth::check()){
+            return Redirect::back()->with('alert','Please login to continue!');
+        }
+        $userId = Auth::user()->id;
+        $wishlistId = DB::table('wishlist')->where('userId', '=' , $userId)->pluck('wishlistId');
+        $count = DB::table('wishlistitems')->where('wishlistId',$wishlistId)->count();
+        if($count<=0){
+            $nullmsg = 0;
+            return view('pages.wishlist')->with('nullMsg',0);
+        }
+        $wishlist = DB::table('wishlistItems')->where('wishlistId',$wishlistId)->get();
+        $category = array();
+        $modelNo = array();
+        foreach($wishlist as $items){
+            $category[] = $items->categoryId;
+            $modelNo[] = $items->modelNo;
+        }
+        $length = count($modelNo);
+        $wishlistItems = array();
+        $i=0;
+        while($i<$length){
+            $table = DB::table('productCategory')->where('categoryId',$category[$i])->pluck('categoryName');
+            $wishlistItems[] = DB::table($table[0])->where('modelNo',$modelNo[$i])->get();
+            $i= $i+1;
+        }
+        return view('pages.wishlist')->with('nullMsg',1)->with('wishlistItems',$wishlistItems)->with('count',$count);
     }
 }

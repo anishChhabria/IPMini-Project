@@ -80,8 +80,16 @@ route::group(['prefix' => 'category/product'],function(){
     route::get('/{categoryId}/{modelNo}','CategoryController@displayProduct');
 });
 
-//cart wishlist
+// add/delete/update cart
 route::post('/addToCart/{categoryId}/{modelNo}','CartwishlistController@addCart');
+route::post('/updateCart/{categoryId}/{modelNo}','CartwishlistController@updateCart');
+route::get('/deleteCartItem/{categoryId}/{modelNo}','CartwishlistController@deleteCartItem');
+route::get('/moveToWishlist/{categoryId}/{modelNo}','CartwishlistController@moveToWishlist');
+
+// add/delete wishlist
+route::get('/addToWishlist/{categoryId}/{modelNo}','CartwishlistController@addWishlist');
+route::get('/deleteFromWishlist/{categoryId}/{modelNo}','CartwishlistController@deleteFromWishlist');
+route::get('/moveToCart/{categoryId}/{modelNo}','CartwishlistController@moveToCart');
 
 //brand page
 route::group(['prefix' => 'brand'],function(){
@@ -92,3 +100,5 @@ route::group(['prefix' => 'brand'],function(){
 route::group(['prefix' => 'brand'],function(){
     route::get('/{brand}/{table}/{modelNo}','CategoryController@displayProduct');
 });
+
+
