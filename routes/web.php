@@ -60,15 +60,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //compare page route
-route::get('/Compare/processorCompare','CompareController@processorCompare');
-route::get('/Compare/motherboardCompare','CompareController@motherboardCompare');
-route::get('/Compare/graphicCompare','CompareController@graphicCompare');
-route::get('/Compare/ramCompare','CompareController@ramCompare');
-route::get('/Compare/powersupplyCompare','CompareController@powersupplyCompare');
-route::get('/Compare/storageCompare','CompareController@storageCompare');
-route::get('/Compare/cabinateCompare','CompareController@cabinateCompare');
+route::get('/Compare/productCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/motherboardCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/graphicCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/ramCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/powersupplyCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/storageCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/cabinateCompare/{categoryId}','CompareController@compare');
 
+//payment 
+route::get('/orderPreview','PaymentController@orderPreview');
 route::get('/Payment','PaymentController@payment');
+route::post('/placeOrder','PaymentController@placeOrder');
 
 //category page 
 route::group(['prefix' => 'product' ],function(){
@@ -81,8 +84,16 @@ route::group(['prefix' => 'category/product'],function(){
     route::get('/{categoryId}/{modelNo}','CategoryController@displayProduct');
 });
 
-//cart wishlist
+// add/delete/update cart
 route::post('/addToCart/{categoryId}/{modelNo}','CartwishlistController@addCart');
+route::post('/updateCart/{categoryId}/{modelNo}','CartwishlistController@updateCart');
+route::get('/deleteCartItem/{categoryId}/{modelNo}','CartwishlistController@deleteCartItem');
+route::get('/moveToWishlist/{categoryId}/{modelNo}','CartwishlistController@moveToWishlist');
+
+// add/delete wishlist
+route::get('/addToWishlist/{categoryId}/{modelNo}','CartwishlistController@addWishlist');
+route::get('/deleteFromWishlist/{categoryId}/{modelNo}','CartwishlistController@deleteFromWishlist');
+route::get('/moveToCart/{categoryId}/{modelNo}','CartwishlistController@moveToCart');
 
 //brand page
 route::group(['prefix' => 'brand'],function(){
@@ -93,3 +104,5 @@ route::group(['prefix' => 'brand'],function(){
 route::group(['prefix' => 'brand'],function(){
     route::get('/{brand}/{table}/{modelNo}','CategoryController@displayProduct');
 });
+
+

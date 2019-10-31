@@ -72,7 +72,7 @@
                     <input type="number" name="quantity" value="1" min="1" max="5" size="4"> <br><br>
                     <input type="submit" value="Add to cart" class="cartwish"> 
             </form>
-                    <button class="cartwish">Add to wishlist</button>
+                    <a href="/addToWishlist/{{$showproduct->categoryId}}/{{$showproduct->modelNo}}" class="btn btn-xs btn-info cartwish" style="padding: 3px!important; text-aligh:center; font-size:15px;">Add to wishlist</a>
         </div>
     @endforeach
 </div>
@@ -123,4 +123,11 @@
             @endforeach
     </div>
 </div>
+<script>
+ var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+</script>
 @endsection
