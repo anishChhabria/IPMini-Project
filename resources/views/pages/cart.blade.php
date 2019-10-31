@@ -61,7 +61,7 @@
                 </div> 
                 <br>
                 {{-- <button style="background-color: #112D32; border-radius:7px; border-color: #88BDBC; color:white;">Proceed to Buy</button> --}}
-                <a href="" class="btn btn-xs btn-info" style="padding: 3px!important; text-aligh:center; font-size:15px; background-color: #112D32; border-radius:7px; border-color: #88BDBC; color:white;">Proceed to Buy</a>
+                <a href="/orderPreview" class="btn btn-xs btn-info" style="padding: 3px!important; text-aligh:center; font-size:15px; background-color: #112D32; border-radius:7px; border-color: #88BDBC; color:white;">Proceed to Buy</a>
 
                 <br>
                 <br>

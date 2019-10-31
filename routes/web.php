@@ -59,15 +59,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //compare page route
-route::get('/Compare/processorCompare','CompareController@processorCompare');
-route::get('/Compare/motherboardCompare','CompareController@motherboardCompare');
-route::get('/Compare/graphicCompare','CompareController@graphicCompare');
-route::get('/Compare/ramCompare','CompareController@ramCompare');
-route::get('/Compare/powersupplyCompare','CompareController@powersupplyCompare');
-route::get('/Compare/storageCompare','CompareController@storageCompare');
-route::get('/Compare/cabinateCompare','CompareController@cabinateCompare');
+route::get('/Compare/productCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/motherboardCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/graphicCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/ramCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/powersupplyCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/storageCompare/{categoryId}','CompareController@compare');
+route::get('/Compare/cabinateCompare/{categoryId}','CompareController@compare');
 
+//payment 
+route::get('/orderPreview','PaymentController@orderPreview');
 route::get('/Payment','PaymentController@payment');
+route::post('/placeOrder','PaymentController@placeOrder');
 
 //category page 
 route::group(['prefix' => 'product' ],function(){
