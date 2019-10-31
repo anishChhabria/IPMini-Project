@@ -4,7 +4,7 @@
     <nav class="sidenavbar">
         <aside class="col-xs-12 col-md-12 col-lg-3 side-menu">
             <nav class="left-nav hidden-xs hidden-sm hidden-md">
-                <ul class="nolist">
+                {{-- <ul class="nolist">
                     <li>
                         <a class="link" href="#">
                             High End System
@@ -76,12 +76,41 @@
                             </li>
                         </ul>
                     </li>
+                </ul> --}}
+
+                <ul class="nolist">
+                    <li>
+                        <strong>Why Choose US?</strong>
+                    </li><br>
+                    <li>
+                        High Performance
+                    </li><br>
+                    <li> 
+                        Reliable Products    
+                    </li><br>
+                    <li>
+                        Custom Built PC's
+                    </li><br>
+                    <li>
+                        Seamless Experience
+                    </li><br>
+                    
+                    <li>
+                        Great Offers
+                    </li><br>
+                    
+                    <li>
+                        Customer Support 
+                    </li><br>
+
                 </ul>
             </nav>
+            {{-- <p><strong>Why Choose US?</strong></p> --}}
+            
         </aside>
     </nav>
     <div class="categoryData">
-        
+      @yield('prebuilt')  
     
     </div>  
     <script>

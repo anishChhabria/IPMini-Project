@@ -51,7 +51,7 @@ class NavigationController extends Controller
     }
     public function preBuilt()
     {
-        return view('pages.pre-built');
+        return view('preBuilt.defaultPrebuilt');
     }
     public function customBuilt()
     {

@@ -262,7 +262,8 @@
 				</div>
                 {{-- <div class="col-md-2 col-sm-2">
                         {{Form::submit('Submit',['class'=>'btn btn-success btn-lg'])}}          
-                </div>  --}}
+				</div>  --}}
+        </form>
 </div>
 <script type="text/javascript">
 	function generatefullname(){

@@ -6,7 +6,7 @@
     <nav id="topNav1" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div id="logo" class="col-3">
-                LOGO
+                {{config('app.name')}}
             </div>
             <div id="search" class="col-5 input-group md-form form-sm form-2 pl-0 ">
                 <input id = "searchBar" class="form-control my-0 py-1 red-border" type="text" placeholder="Search..." aria-label="Search">

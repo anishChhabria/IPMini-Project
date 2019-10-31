@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-4" style="padding:0;">
                                     <a href="/category/product/{{$item->categoryId}}/{{$item->modelNo}}">
-                                        <img src="/storage/processor_images/{{$item->p_image1}}" height="200" width="auto">
+                                        <img src="/storage/processor_images/{{$item->p_image1}}" height="200" width="320">
                                     </a>
                                 </div>
                                 <div class="col-6" style="padding:0;">
