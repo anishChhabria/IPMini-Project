@@ -4,7 +4,7 @@
     <nav class="sidenavbar">
         <aside class="col-xs-12 col-md-12 col-lg-3 side-menu">
             <nav class="left-nav hidden-xs hidden-sm hidden-md">
-                <ul class="nolist">
+                {{-- <ul class="nolist">
                     <li>
                         <a class="link" href="#">
                             Mouse
@@ -128,14 +128,39 @@
                             </li>        
                         </ul>
                     </li>
+                </ul> --}}
+                <ul class="nolist">
+                    <li>
+                        <a href="#">60 Hz</a>
+                    </li>
+                    <li>
+                        <a href="#">144 Hz</a>
+                    </li>
+                    <li>
+                        <a href="#">240 Hz</a>
+                    </li>
                 </ul>
             </nav>
         </aside>
     </nav>
 
     <div class="categoryData">
-        
-
+            <div style="height=100% !important;" >
+                <div class = "row" style="margin:10px;">
+                    @foreach ($products as $showproduct)
+                        <div class = "card col-md-4">
+                            <a href="/category/product/{{$showproduct->categoryId}}/{{$showproduct->modelNo}}">
+                                <img class="card-img-top" src="/storage/processor_images/{{$showproduct->p_image1}}" height="200" width="auto">
+                                <div class="card-body" style="text-align:center;">
+                                    <h6 style="color:black;">{{$showproduct->productName}}</h6>
+                                    <h6 style="color:#88BDBC;">₹ {{$showproduct->cost}}</h6>
+                                </div>
+                            </a>             
+                    </div>
+                    @endforeach
+                </div>              
+            </div>
+    
     </div> 
     
     

@@ -17,9 +17,6 @@
                             <li>
                                 <a href="/brand/asus/gpu">Graphic card</a>
                             </li>
-                            <li>
-                                <a href="/brand/asus/accessories">Peripherals</a>
-                            </li>
                         </ul>
                     </li>
                     <li>
@@ -68,10 +65,6 @@
                             <li>
                                 <a href="/brand/corsair/coolingSystem">Cooling</a>
                             </li>
-                            <li>
-                                <a href="/brand/corsair/sccessories">Peripherals</a>
-                        
-                            </li>
                         </ul>            
                     </li>
                     <li>
@@ -85,10 +78,6 @@
                             </li>
                             <li>
                                 <a href="/brand/gigabyte/gpu">Graphic Card</a>
-                            </li>
-                            <li>
-                                <a href="/brand/gigabyte/accessories">Peripherals</a>
-                        
                             </li>
                         </ul>            
                     </li>
@@ -118,7 +107,7 @@
                             </li>
                         </ul>            
                     </li>
-                    <li>
+                    {{-- <li>
                         <a class="link" href="#">
                             Msi
                             <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
@@ -132,7 +121,7 @@
                         
                             </li>
                         </ul>            
-                    </li>
+                    </li> --}}
                     <li>
                         <a class="link" href="#">
                             Nzxt
