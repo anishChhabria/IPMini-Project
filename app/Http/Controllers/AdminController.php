@@ -357,8 +357,10 @@ class AdminController extends Controller
         $result = DB::table('productCategory')->get(['categoryName']);
         // return($result);
         if(Auth::user()){
-            if(DB::table('admin')->get()->where('emailId','=',AUTH::user()->email)){
+            if(Auth::user()->email == '2017.anshul.chaudhary@ves.ac.in'){
                 return view('admin.adminDashboard')->with('products', $result);
+            }else{
+                return redirect('/');    
             }    
         }else{
             return redirect('/');

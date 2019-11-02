@@ -61,6 +61,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //compare page route
 route::get('/Compare/productCompare/{categoryId}','CompareController@compare');
+
+route::post('/Compare/productCompare/show/{categoryID}','CompareController@compareproduct');
+
 route::get('/Compare/motherboardCompare/{categoryId}','CompareController@compare');
 route::get('/Compare/graphicCompare/{categoryId}','CompareController@compare');
 route::get('/Compare/ramCompare/{categoryId}','CompareController@compare');

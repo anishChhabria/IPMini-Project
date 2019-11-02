@@ -1,66 +1,86 @@
 @extends('pages/compare')
 
 @section('compare')
+<meta name="csrf-token" content="{{ csrf_token() }}">
     <div class="row">
-        <div class="col-2"></div>
+    <div class="col-2" id = "category">{{$categoryId}}</div>
         <div class="col-5" style="text-align:center;">
             <h3>Select 1st product</h3>
             <br>
-            <form id="product1" action="/compare/productCompare/{{$categoryId}}/show" method="post">
+            <form id="product1">
                 @csrf
-                <select name="dropDown" class="form-control" onchange="update1()" style="display:inline; background-color:#88BDBC; color:#112D32;font-size:20px;">
+                <select id = "dropDown1" name="dropDown1" class="form-control" onchange="update1()" style="display:inline; background-color:#88BDBC; color:#112D32;font-size:20px;">
                     @foreach($product as $item)
                         <option value="none" selected disabled hidden>select product 1</option>
                         <option value="{{$item->modelNo}}">{{$item->productName}}</option>
                     @endforeach
                 </select>
-            </form>
         </div>
         <div class="col-5" style="text-align:center;">
             <h3>Select 2nd product</h3>
             <br>
-            <form id="product1" action="/compare/productcompare/{{$categoryId}}/show" method="post">
-                @csrf
-                <select name="dropDown" class="form-control" onchange="update2()" style="display:inline; background-color:#88BDBC; color:#112D32;font-size:20px;">
+                <select name="dropDown2" id = "dropDown2" class="form-control" onchange="update2()" style="display:inline; background-color:#88BDBC; color:#112D32;font-size:20px;">
                     @foreach($product as $item)
-                        <option value="none" selected disabled hidden>select product 1</option>
+                        <option value="none" selected disabled hidden>select product 2</option>
                         <option value="{{$item->modelNo}}">{{$item->productName}}</option>
                     @endforeach
                 </select>
             </form>
         </div>
     </div>
-    <div class="row">
-        <div class="col-7" style="text-align:center;">
-            @foreach ($product as $row)   
-                @foreach ($row as $item1) 
-                    {{$item1}}
-                    {{-- @if ($column[$i]=='description' || $column[$i]=='p_image1' || $column[$i]=='p_image2' || $column[$i]=='p_image3' || $column[$i]=='created_at' || $column[$i]=='updated_at' || $column[$i]=='categoryId' || $column[$i]=='inStock') --}}
-                        {{-- @php
-                            $i = $i + 1        
-                        @endphp --}}
-                        @continue
-                    {{-- @endif --}}
-                    <tr>
-                        {{-- <td>{{$column[$i]}}</td> --}}
-                        <td>{{$item1}}</td>
-                    </tr>
-                    {{-- @php
-                        $i = $i+1
-                    @endphp --}}
-                @endforeach
-            @endforeach
-        </div>
-        <div class="col-5" style="text-align:center;">
-        
-        </div>
-    </div> 
-    <Script>
+    <div id = "demo"></div>
+    @yield('compare')
+    <Script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var value1, value2;
+        var productData1, productData2;
+        var categoryId = document.getElementById('category').innerHTML;
         function update1(){
-            document.getElementById("product1").submit();
+            window.product1 = document.getElementById('dropDown1');
+            value1 = product1.value;
+            getvalue();
         }
         function update2(){
-            document.getElementById("product2").submit();
+            product2 = document.getElementById('dropDown2');
+            value2 = product2.value;
+            getvalue();
+        }
+
+        function myfunc(value, index, array){
+            console.log(value + " " + index )
+        }
+
+        function getvalue(){
+            // console.log(value1);
+            // console.log(value2);
+            $.ajax({
+                type:'post',
+                url:'/Compare/productCompare/show/'+categoryId,
+                data:{value1:value1, value2:value2, categoryId:categoryId},
+                success: function(data){ // What to do if we succeed
+                    // data.forEach(myfunc);
+                    // productData1 =  new Array(data[0]);
+                    // productData2 =  new Array(data[1]);
+                    // console.log(productData1);
+                    // console.log(productData2);
+                    // alert(JSON.stringify(productData1));
+                    var temp_arr = JSON.parse(JSON.stringify(data));
+                    var str1 = "";
+                    for(var i = 0; i<temp_arr.length;i++){
+                        key_arr = Object.keys(temp_arr[i]);
+                        for(var j=0; j<key_arr.length;j++){
+                            str1+=key_arr[j]  + ":" + temp_arr[i][key_arr[j]] + '<br>';
+                        }
+                        // str1+=JSON.stringify(temp_arr[i]['modelNo']);
+                        // str1+= '<br>';
+                    }
+                    document.getElementById('demo').innerHTML = str1;
+                }
+            });
         }
     </Script>
 @endsection

@@ -68,8 +68,8 @@ class PaymentController extends Controller
             DB::table('orderItems')->insert(['orderId'=>$orderId[0],'categoryId'=>$item->categoryId,'modelNo'=>$item->modelNo,'quantity'=>$item->quantity]);
             DB::table('cartItems')->where('cartId',$cartId)->where('categoryId',$item->categoryId)->where('modelNo',$item->modelNo)->delete();
         }
-        return("1");
-        
+        // return("1");
+        return redirect('/');
 
     } 
 }
