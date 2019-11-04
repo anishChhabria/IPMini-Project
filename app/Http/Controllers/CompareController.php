@@ -18,10 +18,14 @@ class CompareController extends Controller
 
     public function compareproduct($categoryId, Request $request){
 
+        // return response()->json($request);
+
+
         $product1 = $request->value1;
         $product2 = $request->value2;
-        $productType = DB::table('productCategory')->get()->where('categoryId', '=', $categoryId);
-        $tableName = $productType[0]->categoryName;
+        $productType = DB::table('productCategory')->get()->where('categoryId', '=', $categoryId)->pluck('categoryName');
+        // return response()->json($productType[0]);
+        $tableName = $productType[0];
         $data1 = DB::table($tableName)->get()->where('modelNo', '=', $product1);
         $data2 = DB::table($tableName)->get()->where('modelNo', '=', $product2);
         // $data1 = $data1[0];

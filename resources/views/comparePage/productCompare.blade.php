@@ -66,7 +66,7 @@
                     // productData1 =  new Array(data[0]);
                     // productData2 =  new Array(data[1]);
                     // console.log(productData1);
-                    // console.log(productData2);
+                    console.log(data);
                     // alert(JSON.stringify(productData1));
                     var temp_arr = JSON.parse(JSON.stringify(data));
                     var str1 = "";
