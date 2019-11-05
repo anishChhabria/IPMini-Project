@@ -14,46 +14,45 @@
             </div>
             <div class="col-1 wishlist">
                 <a id="wishlist" class="plain wishlist" href="/wishlist">
-                    <i class="fa fa-heart" aria-hidden="true"></i> Wishlist
+                    <i class="fa fa-heart" aria-hidden="true"></i> <span class='wishcart1'>Wishlist</span>
                 </a>
             </div>
             <div class="col-1 cart">
                 <a id="cart" class="plain cart" href="/cart">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class='wishcart1'>Cart</span>
                 </a>
             </div>
-            {{-- <div class="col-2"> --}}
-                @guest
-                <div class="col-1 userprofile">
-                    <li class="nav-item " style="padding:0px">
-                        <a class="nav-link" href="{{ route('login') }}" style="padding: 0px;">{{ __('Login') }}</a>
-                    </li>
-                </div>
-                <div class="col-1 userprofile">
-                    <li class="nav-item" style="padding: 0px;">
-                        <a class="nav-link" href="{{ route('register') }}" style="padding: 0px;">{{ __('Register') }}</a>
-                    </li>
-                </div>
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="z-index: 6; position: absolute;">
-                            <a class="dropdown-item" href="/profile">Profile</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
+            @guest
+            <div class="col-1 userprofile">
+                <li class="nav-item " style="padding:0px">
+                    <a class="nav-link" href="{{ route('login') }}" style="padding: 0px;">{{ __('Login') }}</a>
+                </li>
             </div>
+            <div class="col-1 userprofile">
+                <li class="nav-item" style="padding: 0px;">
+                    <a class="nav-link" href="{{ route('register') }}" style="padding: 0px;">{{ __('Register') }}</a>
+                </li>
+            </div>
+            @else
+                <li class="nav-item dropdown col-2">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="z-index: 6; position: absolute;">
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <a class="dropdown-item" href="/orders">Orders</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            @endguest
         </div>
     </nav> 
     <nav id="topNav2" class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
@@ -74,16 +73,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Prebuilt" data-target="pre-built">
-                            Pre-built
-                        </a>
-                    </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="/Custombuilt" data-target="custom-built">
-                            Custom-built 
-                        </a>
-                    </li> --}}
-                    <li class="nav-item">
                         <a class="nav-link" href="/Accessories">
                             Monitor
                         </a>
@@ -96,6 +85,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Offers">
                             Offers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Prebuilt" data-target="pre-built">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Custombuilt" data-target="custom-built">
+                            Contact Us 
                         </a>
                     </li>
                     @if(Session::has('user') && Session::get('user')['email'] == '2017.anshul.chaudhary@ves.ac.in' )
