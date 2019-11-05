@@ -35,7 +35,7 @@ route::get('/Compare','NavigationController@compare');
 route::get('/Offers','NavigationController@offers');
 route::get('/cart','NavigationController@cart');
 route::get('/wishlist','NavigationController@wishlist');
-
+route::get('/search','NavigationController@search');
 
 // profile page
 Route::get('/profile', "ProfileController@index" );

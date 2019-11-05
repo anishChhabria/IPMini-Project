@@ -32,10 +32,15 @@ nav div div {
         height: auto;
     }
 }
+#searchDroupdown{
+    outline: none !important;  
+    border-bottom-left-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+    background-color: lightgray !important;
+    
+}
 #searchBar{
     outline: none !important;  
-    border-top-left-radius: 20px !important;
-    border-bottom-left-radius: 20px !important;
 }
 #searchButton{
     border-bottom-right-radius: 20px;

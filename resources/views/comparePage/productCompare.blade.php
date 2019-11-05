@@ -2,8 +2,10 @@
 
 @section('compare')
 <meta name="csrf-token" content="{{ csrf_token() }}">
+    <h2>Compare {{$category}}</h2>
+    <br>
     <div class="row">
-    <div class="col-2" id = "category">{{$categoryId}}</div>
+    <div class="col-2" id = "category"></div>
         <div class="col-5" style="text-align:center;">
             <h3>Select 1st product</h3>
             <br>
@@ -38,7 +40,7 @@
         });
         var value1, value2;
         var productData1, productData2;
-        var categoryId = document.getElementById('category').innerHTML;
+        var categoryId = {!!$categoryId!!};
         function update1(){
             window.product1 = document.getElementById('dropDown1');
             value1 = product1.value;
@@ -63,12 +65,13 @@
                 data:{value1:value1, value2:value2, categoryId:categoryId},
                 success: function(data){ // What to do if we succeed
                     // data.forEach(myfunc);
-                    // productData1 =  new Array(data[0]);
-                    // productData2 =  new Array(data[1]);
-                    // console.log(productData1);
-                    console.log(data);
-                    // alert(JSON.stringify(productData1));
-                    var temp_arr = JSON.parse(JSON.stringify(data));
+                    productData1 =  new Array(data[0]);
+                    productData2 =  new Array(data[1]);
+                    console.log("1"+JSON.stringify(productData1));
+                    console.log("2"+JSON.stringify(productData2));
+                    // alert(JSON.stringify(productData2));
+                    // var temp_arr = JSON.parse(JSON.stringify(data));
+                    var temp_arr= JSON.stringify(productData1);
                     var str1 = "";
                     for(var i = 0; i<temp_arr.length;i++){
                         key_arr = Object.keys(temp_arr[i]);

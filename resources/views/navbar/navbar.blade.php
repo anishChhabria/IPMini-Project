@@ -8,10 +8,23 @@
             <div id="logo" class="col-3">
                 {{config('app.name')}}
             </div>
-            <div id="search" class="col-5 input-group md-form form-sm form-2 pl-0 ">
-                <input id = "searchBar" class="form-control my-0 py-1 red-border" type="text" placeholder="Search..." aria-label="Search">
-                <button id="searchButton"><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
-            </div>
+            {{-- <div id="search" class="col-5 input-group md-form form-sm form-2 pl-0 "> --}}
+                <form action="/search" method="get" id="search" class="col-5 input-group md-form form-sm form-2 pl-0 ">
+                    <select name="searchDroupdown" id="searchDroupdown" required>
+                        <option value="Null" selected disabled hidden>select category</option>
+                        <option value="101">Processor</option>
+                        <option value="102">Motherboard</option>
+                        <option value="103">GPU</option>
+                        <option value="104">Ram</option>
+                        <option value="105">Storage</option>
+                        <option value="106">PSU</option>
+                        <option value="107">Cabinets</option>
+                        <option value="108">Cooling</option>
+                    </select>
+                    <input id = "searchBar" name="searchBar" class="form-control my-0 py-1 red-border" type="text" placeholder="Search..." aria-label="Search" required>
+                    <button id="searchButton" type="submit"><i class="fas fa-search text-grey" aria-hidden="true"></i></button>
+                </form>
+            {{-- </div> --}}
             <div class="col-1 wishlist">
                 <a id="wishlist" class="plain wishlist" href="/wishlist">
                     <i class="fa fa-heart" aria-hidden="true"></i> <span class='wishcart1'>Wishlist</span>
@@ -84,7 +97,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Compare">
+                        <a class="nav-link" href="/Compare/productCompare/101">
                             Compare
                         </a>
                     </li>

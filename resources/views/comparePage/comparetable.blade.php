@@ -2,6 +2,7 @@
 
 @section('compare')
 
-{{$data}}
+{{$data1}}
+{{$data2}}
     
 @endsection

@@ -12,8 +12,7 @@ class CompareController extends Controller
     {
         $table = DB::table('productCategory')->where('categoryId',$categoryId)->pluck('categoryName');
         $product = DB::table($table[0])->get();
-        // return($product);
-        return view('comparePage.productCompare')->with('product', $product)->with('categoryId',$categoryId);
+        return view('comparePage.productCompare')->with('category',$table[0])->with('product', $product)->with('categoryId',$categoryId);
     }
 
     public function compareproduct($categoryId, Request $request){

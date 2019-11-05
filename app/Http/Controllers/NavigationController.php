@@ -140,4 +140,12 @@ class NavigationController extends Controller
         }
         return view('pages.wishlist')->with('nullMsg',1)->with('wishlistItems',$wishlistItems)->with('count',$count);
     }
+    public function search(Request $request){
+        $categoryId = $request->input('searchDroupdown');
+        $productName = $request->input('searchBar');
+        if($categoryId==Null && $productName==Null){
+            return redirect('');
+        }
+        return($productName);
+    }
 }
