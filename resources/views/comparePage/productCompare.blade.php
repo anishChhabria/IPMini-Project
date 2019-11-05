@@ -33,13 +33,8 @@
     <div id = "demo">
         <table border=1 id="compareTable">
             <col width='150px'/>
+            <col width='380px'/>
             <col width='370px'/>
-            <col width='370px'/>
-            <tr>
-                <th>Data</th>
-                <th>Product 1</th>
-                <th>Product 2</th>
-            </tr>
         </table>
     </div>
     @yield('compare')
@@ -79,6 +74,7 @@
                     var str1 = "";
                     var key
                     var table = document.getElementById('compareTable');
+                    table.innerHTML= "";
                     for(var i = 0; i<temp_arr.length;i++){
                         key = Object.keys(temp_arr[i]);
                     }
