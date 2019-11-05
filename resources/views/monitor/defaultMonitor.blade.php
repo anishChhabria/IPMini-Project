@@ -1,6 +1,6 @@
-@extends('pages.brands')
+@extends('pages.accessories')
 
-@section('brand')
+@section('monitor')
     
 <div id="demo" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
@@ -10,13 +10,13 @@
     </ul>       
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{asset('images/brand/corsairSetup.png')}}" alt="CorsairSetup" width="auto" height="500">
+            <img src="{{asset('images/monitor/samsung.jpg')}}" alt="CorsairSetup" width="auto" height="500">
         </div>
         <div class="carousel-item">
-            <img src="{{asset('images/brand/GskillpTridentZ.jpg')}}" alt="GskillRgbRam" width="auto" height="500">
+            <img src="{{asset('images/monitor/asus.jpg')}}" alt="GskillRgbRam" width="auto" height="500">
         </div>
         <div class="carousel-item">
-            <img src="{{asset('images/brand/coolermaster.jpg')}}" alt="asus" width="auto" height="500">
+            <img src="{{asset('images/monitor/alienware.jpg')}}" alt="asus" width="auto" height="500">
         </div>
     </div>
 </div>

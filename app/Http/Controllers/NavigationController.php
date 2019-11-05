@@ -62,8 +62,7 @@ class NavigationController extends Controller
     public function accessories()
     {
 
-        $products = DB::table('monitors')->get();
-        return view('pages.accessories')->with('products',$products);
+        return view('monitor.defaultMonitor');
     }
     public function compare()
     {
