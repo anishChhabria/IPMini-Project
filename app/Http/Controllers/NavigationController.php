@@ -10,8 +10,6 @@ use App\processors;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-// use Illuminate\Support\Facades\Auth;
-// use Auth;
 
 class NavigationController extends Controller
 {
@@ -143,9 +141,13 @@ class NavigationController extends Controller
     public function search(Request $request){
         $categoryId = $request->input('searchDroupdown');
         $productName = $request->input('searchBar');
-        if($categoryId==Null && $productName==Null){
-            return redirect('');
-        }
-        return($productName);
+        $table = DB::table('productCategory')->where('categoryId',$categoryId)->pluck('categoryName');
+        $product = DB::table($table[0])->where('productName',$productName)->get();
+        // return("1");
+        $column =  DB::getSchemaBuilder()->getColumnListing($table[0]);
+
+        $productall = DB::table($table[0])->get()->where('productName','!=',$productName);
+        $i=0;
+        return view('categoryPage.displayProduct')->with('productdata',$product)->with('column',$column)->with('i',$i)->with('products',$productall);   
     }
 }

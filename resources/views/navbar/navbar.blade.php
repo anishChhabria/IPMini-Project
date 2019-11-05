@@ -102,11 +102,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Offers">
-                            Offers
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/AboutUs" data-target="pre-built">
                             About Us
                         </a>
