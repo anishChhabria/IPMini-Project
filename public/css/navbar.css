@@ -53,6 +53,11 @@ nav div div {
 #cart i{
     font-size: 25px;
 }
+@media only screen and (max-width: 990px){
+    .wishcart1{
+        display: none;
+    }
+}
 .userprofile{
     padding: 0px !important;
 }
