@@ -12,18 +12,18 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <a href="/profile">
-                <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="Los Angeles" width="auto" height="500">
-            </a>
-            </div>
-            <div class="carousel-item">
             <a href="">
                 <img src="{{asset('images/category/NvidiaRTX2080ti.jpg')}}" alt="Chicago" width="auto" height="500">
             </a>
             </div>
             <div class="carousel-item">
             <a href="">
-                <img src="{{asset('images/category/asusRogz390.jpg')}}" alt="New York" width="auto" height="500">
+                <img src="{{asset('images/category/threadripper.jpg')}}" alt="Los Angeles" width="auto" height="500">
+            </a>
+            </div>
+            <div class="carousel-item">
+            <a href="">
+                <img src="{{asset('images/category/aorus.png')}}" alt="New York" width="auto" height="500">
             </a>
             </div>
         </div>

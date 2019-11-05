@@ -61,6 +61,13 @@ nav div div {
 .userprofile{
     padding: 0px !important;
 }
+.profileDropdownList{
+    padding: 0px !important;
+}
+.profileDropdown{
+    background-color: #88BDBC !important;
+    color: #112D32!important;
+}
 nav div div ul li{
     text-align: center;
     padding-top: 0px !important;

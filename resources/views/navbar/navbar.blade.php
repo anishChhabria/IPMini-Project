@@ -38,14 +38,20 @@
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="z-index: 6; position: absolute;">
-                        <a class="dropdown-item" href="/profile">Profile</a>
-                        <a class="dropdown-item" href="/orders">Orders</a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                    <div class="dropdown-menu dropdown-menu-right profileDropdownList" aria-labelledby="navbarDropdown" style="z-index: 6; position: absolute;">
+                        <div class="profileDropdown">
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                        </div>
+                        <div class="profileDropdown">
+                            <a class="dropdown-item" href="/orders">Orders</a>
+                        </div>
+                        <div class="profileDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </div>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -88,12 +94,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Prebuilt" data-target="pre-built">
+                        <a class="nav-link" href="/AboutUs" data-target="pre-built">
                             About Us
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Custombuilt" data-target="custom-built">
+                        <a class="nav-link" href="/ContactUs" data-target="custom-built">
                             Contact Us 
                         </a>
                     </li>

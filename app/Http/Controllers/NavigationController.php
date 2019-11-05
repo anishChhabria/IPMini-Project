@@ -49,15 +49,13 @@ class NavigationController extends Controller
     {
         return view('brandPage.defaultBrand');
     }
-    public function preBuilt()
+    public function aboutUs()
     {
-        return view('preBuilt.defaultPrebuilt');
+        return view('pages.aboutUs');
     }
-    public function customBuilt()
+    public function contactUs()
     {
-        $processors = processors::get();
-        // return($processors);
-        return view('pages.custom-built')->with('processors',$processors);
+        return view('pages.contactUs');
     }
     public function monitor()
     {

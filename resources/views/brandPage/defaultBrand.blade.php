@@ -18,7 +18,7 @@
             <img src="{{asset('images/brand/GskillpTridentZ.jpg')}}" alt="GskillRgbRam" width="auto" height="500">
         </div>
         <div class="carousel-item">
-            <img src="{{asset('images/category/asusStrixXG258q.jpg')}}" alt="asus" width="auto" height="500">
+            <img src="{{asset('images/brand/coolermaster.jpg')}}" alt="asus" width="auto" height="500">
         </div>
     </div>
 </div>

@@ -27,8 +27,8 @@ route::get('/','NavigationController@index');
 // navbar controller
 route::get('/Category','NavigationController@category');
 route::get('/Brands','NavigationController@brand');
-route::get('/Prebuilt','NavigationController@preBuilt');
-route::get('/Custombuilt','NavigationController@customBuilt');
+route::get('/AboutUs','NavigationController@aboutUs');
+route::get('/ContactUs','NavigationController@contactUs');
 route::get('/Monitor','NavigationController@monitor');
 route::get('/Accessories','NavigationController@accessories');
 route::get('/Compare','NavigationController@compare');
