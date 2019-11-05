@@ -30,7 +30,18 @@
             </form>
         </div>
     </div>
-    <div id = "demo"></div>
+    <div id = "demo">
+        <table border=1 id="compareTable">
+            <col width='150px'/>
+            <col width='370px'/>
+            <col width='370px'/>
+            <tr>
+                <th>Data</th>
+                <th>Product 1</th>
+                <th>Product 2</th>
+            </tr>
+        </table>
+    </div>
     @yield('compare')
     <Script type="text/javascript">
         $.ajaxSetup({
@@ -57,31 +68,31 @@
         }
 
         function getvalue(){
-            // console.log(value1);
-            // console.log(value2);
             $.ajax({
                 type:'post',
                 url:'/Compare/productCompare/show/'+categoryId,
                 data:{value1:value1, value2:value2, categoryId:categoryId},
-                success: function(data){ // What to do if we succeed
-                    // data.forEach(myfunc);
+                success: function(data){ 
                     productData1 =  new Array(data[0]);
                     productData2 =  new Array(data[1]);
-                    console.log("1"+JSON.stringify(productData1));
-                    console.log("2"+JSON.stringify(productData2));
-                    // alert(JSON.stringify(productData2));
-                    // var temp_arr = JSON.parse(JSON.stringify(data));
-                    var temp_arr= JSON.stringify(productData1);
+                    var temp_arr = JSON.parse(JSON.stringify(data));
                     var str1 = "";
+                    var key
+                    var table = document.getElementById('compareTable');
                     for(var i = 0; i<temp_arr.length;i++){
-                        key_arr = Object.keys(temp_arr[i]);
-                        for(var j=0; j<key_arr.length;j++){
-                            str1+=key_arr[j]  + ":" + temp_arr[i][key_arr[j]] + '<br>';
-                        }
-                        // str1+=JSON.stringify(temp_arr[i]['modelNo']);
-                        // str1+= '<br>';
+                        key = Object.keys(temp_arr[i]);
                     }
-                    document.getElementById('demo').innerHTML = str1;
+                    for(var j=0; j<key.length;j++){
+                        console.log(j);
+                        var row = table.insertRow();
+                        var cell1 = row.insertCell();
+                        var cell2 = row.insertCell();
+                        var cell3 = row.insertCell();
+                        cell1.innerHTML = key[j];
+                        cell2.innerHTML = temp_arr[0][key[j]];
+                        cell3.innerHTML = temp_arr[1][key[j]];
+                        
+                    }
                 }
             });
         }
