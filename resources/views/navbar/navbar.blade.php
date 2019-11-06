@@ -6,7 +6,10 @@
     <nav id="topNav1" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div id="logo" class="col-3">
-                {{config('app.name')}}
+                {{-- {{config('app.name')}} --}}
+                <a href="mini.com">
+                    <img src="{{asset('/images/logo/logo1.jpeg')}}" alt="">
+                </a>
             </div>
             {{-- <div id="search" class="col-5 input-group md-form form-sm form-2 pl-0 "> --}}
                 <form action="/search" method="get" id="search" class="col-5 input-group md-form form-sm form-2 pl-0 ">
