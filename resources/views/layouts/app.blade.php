@@ -19,6 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        body{
+            background-image: url({{asset('/images/error/bg.jpg')}})
+        }
+    </style>
 </head>
 <body>
     <div id="app">
