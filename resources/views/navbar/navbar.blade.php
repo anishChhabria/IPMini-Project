@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div id="logo" class="col-3">
                 {{-- {{config('app.name')}} --}}
-                <a href="mini.com">
+                <a href="/">
                     <img src="{{asset('/images/logo/logo1.jpeg')}}" alt="">
                 </a>
             </div>

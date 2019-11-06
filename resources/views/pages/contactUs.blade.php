@@ -37,7 +37,7 @@
         </div>
 
         <div class="card col-4">
-            <img src="{{asset('')}}" alt="Anish" style="width:100%">
+            <img src="{{asset('/images/contactUs/contact2.jpg')}}" alt="Anish" style="width:100%">
             <h1>Anish Chhabria</h1>
             <p class="title">Founder and Developer</p>
             <p>Harvard University</p>

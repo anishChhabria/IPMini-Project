@@ -46,7 +46,7 @@ h1{
                             <h1><strong>Us</strong></h1>
                     </div>
                     <div class="col-10 aboutUs">
-                        BeasrRigs is Indias first E-commerse website started by students that delivers the best products at the most affortable prices. We provide all latest hardware for computers along with high quality peripherals. We assure to have a great and smooth user experience.
+                        BeastRigs is India's first E-commerce website started by students that delivers the best products at the most affortable prices. We provide all latest hardware for computers along with high quality peripherals. We assure to have a great and smooth user experience.
                         <br>
                         <br>
                         Also we provide all genuine products with warrenty clams. The future of shooping is E-commerse that makes us the best choice that you can make.  
