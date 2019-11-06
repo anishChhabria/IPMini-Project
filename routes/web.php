@@ -110,4 +110,9 @@ route::group(['prefix' => 'brand'],function(){
 
 route::get('/monitor/{refreshRate}','AccessoriesController@displayProduct');
 
+route::get('/orders','OrderController@displayOrders');
+
+
+route::get('/orders/{orderId}','OrderController@orderItems');
+
 

@@ -18,11 +18,6 @@
         font-size: 18px;
         }
         
-        a {
-        text-decoration: none;
-        font-size: 22px;
-        color: black;
-        }
     </style>
     <div class="row">        
         <div class="card col-4 ">
@@ -31,10 +26,10 @@
             <p class="title">Founder and Developer</p>
             <p>Harvard University</p>
             <div style="margin: 24px 0;">
-                <a href="https://www.instagram.com/anshul_218"><i class="fa fa-instagram"></i></a> 
-                <a href="#"><i class="fa fa-twitter"></i></a>  
-                <a href="#"><i class="fa fa-linkedin"></i></a>  
-                <a href="#"><i class="fa fa-facebook"></i></a> 
+                <a class="Contactlink" href="https://www.instagram.com/anshul_218"><i class="fa fa-instagram"></i></a> 
+                <a class="Contactlink" href="#"><i class="fa fa-twitter"></i></a>  
+                <a class="Contactlink" href="#"><i class="fa fa-linkedin"></i></a>  
+                <a class="Contactlink" href="#"><i class="fa fa-facebook"></i></a> 
             </div>
             Mobile No.: 9912345989
             Email:2017.anshul.chaudhary@ves.ac.in
@@ -47,10 +42,10 @@
             <p class="title">Founder and Developer</p>
             <p>Harvard University</p>
             <div style="margin: 24px 0;">
-                <a href="https://www.instagram.com/chhabria_anish"><i class="fa fa-instagram"></i></a> 
-                <a href="#"><i class="fa fa-twitter"></i></a>  
-                <a href="#"><i class="fa fa-linkedin"></i></a>  
-                <a href="#"><i class="fa fa-facebook"></i></a> 
+                <a class="Contactlink" href="https://www.instagram.com/chhabria_anish"><i class="fa fa-instagram"></i></a> 
+                <a class="Contactlink" href="#"><i class="fa fa-twitter"></i></a>  
+                <a class="Contactlink" href="#"><i class="fa fa-linkedin"></i></a>  
+                <a class="Contactlink" href="#"><i class="fa fa-facebook"></i></a> 
             </div>
             Mobile No.: 9912334542
             Email:2017.anish.chhabria@ves.ac.in
@@ -63,10 +58,10 @@
             <p class="title">Founder and Developer</p>
             <p>Harvard University</p>
             <div style="margin: 24px 0;">
-                <a href="https://www.instagram.com/parthkodnani99"><i class="fa fa-instagram"></i></a> 
-                <a href="#"><i class="fa fa-twitter"></i></a>  
-                <a href="#"><i class="fa fa-linkedin"></i></a>  
-                <a href="#"><i class="fa fa-facebook"></i></a> 
+                <a class="Contactlink" href="https://www.instagram.com/parthkodnani99"><i class="fa fa-instagram"></i></a> 
+                <a class="Contactlink" href="#"><i class="fa fa-twitter"></i></a>  
+                <a class="Contactlink" href="#"><i class="fa fa-linkedin"></i></a>  
+                <a class="Contactlink" href="#"><i class="fa fa-facebook"></i></a> 
             </div>
             Mobile No.: 9912344346
             Email:2017.parth.kodnani@ves.ac.in
